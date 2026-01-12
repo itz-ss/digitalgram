@@ -1,0 +1,104 @@
+{
+  "title": "Let's Build Something Great Together",
+  "subtitle": "Ready to scale your business? Get in touch and let's discuss how we can help you achieve your goals.",
+  "contactInfo": {
+    "email": {
+      "label": "Email",
+      "value": "hello@digitalgram.com",
+      "href": "mailto:hello@digitalgram.com"
+    },
+    "phone": {
+      "label": "Phone",
+      "value": "+91 6388060502",
+      "href": "tel:+916388060502"
+    },
+    "whatsapp": {
+      "label": "WhatsApp",
+      "value": "+91 6388060502",
+      "href": "https://wa.me/916388060502"
+    },
+    "location": {
+      "label": "Location",
+      "value": "Available Worldwide",
+      "href": null
+    }
+  },
+  "socialLinks": [
+    {
+      "platform": "Instagram",
+      "url": "https://instagram.com/digitalgram",
+      "icon": "instagram"
+    },
+    {
+      "platform": "LinkedIn",
+      "url": "https://linkedin.com/company/digitalgram",
+      "icon": "linkedin"
+    },
+    {
+      "platform": "Facebook",
+      "url": "https://facebook.com/digitalgram",
+      "icon": "facebook"
+    },
+    {
+      "platform": "Twitter",
+      "url": "https://twitter.com/digitalgram",
+      "icon": "twitter"
+    }
+  ],
+  "form": {
+    "fields": [
+      {
+        "name": "name",
+        "label": "Full Name",
+        "type": "text",
+        "required": true,
+        "placeholder": "John Doe"
+      },
+      {
+        "name": "email",
+        "label": "Email Address",
+        "type": "email",
+        "required": true,
+        "placeholder": "john@example.com"
+      },
+      {
+        "name": "phone",
+        "label": "Phone Number",
+        "type": "tel",
+        "required": false,
+        "placeholder": "+1 (555) 123-4567"
+      },
+      {
+        "name": "service",
+        "label": "Service Interest",
+        "type": "select",
+        "required": false,
+        "options": [
+          "Strategy & Growth",
+          "Performance Marketing",
+          "Social Media Marketing",
+          "Content & Creatives",
+          "Brand Shoots",
+          "Web & Funnels",
+          "Local Business Marketing",
+          "SEO",
+          "Reputation Management",
+          "Automation & CRM",
+          "Influencer Marketing",
+          "Other"
+        ]
+      },
+      {
+        "name": "message",
+        "label": "Project Details",
+        "type": "textarea",
+        "required": true,
+        "placeholder": "Tell us about your project, goals, and timeline..."
+      }
+    ],
+    "submitText": "Send Message",
+    "submittingText": "Sending...",
+    "successMessage": "Thank you! We'll get back to you within 24 hours.",
+    "errorMessage": "Something went wrong. Please try again."
+  }
+}

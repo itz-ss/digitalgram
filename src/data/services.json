@@ -1,0 +1,171 @@
+{
+  "tabs": [
+    {
+      "id": "strategy",
+      "label": "Strategy & Growth",
+      "title": "Strategy, Consulting & Growth Planning",
+      "description": "Strong growth starts with clarity. We define strategy, positioning, and execution paths that scale.",
+      "items": [
+        "Digital Growth Strategy",
+        "Competitor Analysis",
+        "Brand Positioning",
+        "Campaign Audits",
+        "Scaling & Optimization Consulting"
+      ]
+    },
+
+    {
+      "id": "performance",
+      "label": "Performance Marketing",
+      "title": "Performance Marketing (Paid Advertising)",
+      "description": "Data-driven paid campaigns focused on leads, conversions, and ROI.",
+      "items": [
+        "Meta Ads (Facebook & Instagram)",
+        "Google Search Ads",
+        "Google Display & YouTube Ads",
+        "Lead Generation Campaigns",
+        "Conversion Tracking Setup",
+        "Funnel Strategy & Scaling",
+        "Retargeting & Lookalike Audiences"
+      ]
+    },
+
+    {
+      "id": "social",
+      "label": "Social Media Marketing",
+      "title": "Social Media Marketing (SMM)",
+      "description": "Build brand presence, community, and reach with structured social media execution.",
+      "items": [
+        "Instagram Management",
+        "Facebook Page Management",
+        "Content Strategy & Calendar",
+        "Reels Strategy & Growth Planning",
+        "Caption Writing & Hashtag Research",
+        "Community Management (Comments & DMs)"
+      ]
+    },
+
+    {
+      "id": "content",
+      "label": "Content & Creatives",
+      "title": "Content Creation & Creative Services",
+      "description": "High-quality content designed to stop scrolls and drive engagement.",
+      "items": [
+        "Short-Form Video Creation (Reels / Shorts)",
+        "Professional Graphic Design",
+        "Carousel & Story Creatives",
+        "Brand Visual Identity",
+        "Product & Lifestyle Content",
+        "Content Editing & Optimization"
+      ]
+    },
+
+    {
+      "id": "production",
+      "label": "Brand Shoots",
+      "title": "Brand Shoots & Creative Production",
+      "description": "Professional visual production to elevate brand perception.",
+      "items": [
+        "Brand Photo Shoots",
+        "Product Photography",
+        "Promotional Video Shoots",
+        "Reels & Ad Video Production",
+        "Editing & Color Grading"
+      ]
+    },
+
+    {
+      "id": "web",
+      "label": "Web & Funnels",
+      "title": "Website & Funnel Development",
+      "description": "Conversion-focused websites and funnels built for performance.",
+      "items": [
+        "Landing Page Design",
+        "Sales Funnel Creation",
+        "Lead Capture Pages",
+        "WhatsApp Integration",
+        "Conversion Optimization (CRO)"
+      ]
+    },
+
+    {
+      "id": "local",
+      "label": "Local Business Marketing",
+      "title": "Local Business Growth Solutions",
+      "description": "Dominate local markets with targeted visibility and lead systems.",
+      "items": [
+        "Google Business Profile Setup & Optimization",
+        "Local SEO (Maps Ranking)",
+        "Review Growth Strategy",
+        "Local Lead Campaigns",
+        "City-Based Targeting Ads"
+      ]
+    },
+
+    {
+      "id": "seo",
+      "label": "SEO",
+      "title": "Search Engine Optimization (SEO)",
+      "description": "Long-term organic growth through technical and content SEO.",
+      "items": [
+        "On-Page SEO",
+        "Local SEO",
+        "Keyword Research",
+        "Technical SEO",
+        "Monthly SEO Reporting"
+      ]
+    },
+
+    {
+      "id": "orm",
+      "label": "Reputation Management",
+      "title": "Online Reputation Management",
+      "description": "Build trust, authority, and positive brand perception online.",
+      "items": [
+        "Review Management",
+        "Brand Monitoring",
+        "Negative Review Handling",
+        "Trust & Authority Building"
+      ]
+    },
+
+    {
+      "id": "automation",
+      "label": "Automation & CRM",
+      "title": "Marketing Automation & CRM Systems",
+      "description": "Automated follow-ups and retention systems that scale operations.",
+      "items": [
+        "WhatsApp Automation",
+        "Lead Follow-up Systems",
+        "CRM Integration",
+        "Email Marketing Automation",
+        "Customer Retention Campaigns"
+      ]
+    },
+
+    {
+      "id": "influencer",
+      "label": "Influencer Marketing",
+      "title": "Influencer Marketing Services",
+      "description": "End-to-end influencer campaigns with measurable ROI.",
+      "items": [
+        "Influencer Campaign Planning",
+        "Influencer Discovery & Selection",
+        "Influencer Outreach & Management",
+        "Sponsored Reels & Posts",
+        "Brand Integrations",
+        "Paid Amplification of Influencer Content",
+        "Campaign Tracking & ROI Reporting",
+        "Industry-Specific Influencer Campaigns"
+      ]
+    }
+  ],
+
+  "whyChooseUs": [
+    "Result-focused marketing approach",
+    "Local + national campaign expertise",
+    "Transparent pricing & reporting",
+    "Performance-driven execution",
+    "Scalable growth strategies"
+  ]
+}

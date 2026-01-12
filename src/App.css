@@ -1,0 +1,30 @@
+/**
+ * App-level styles
+ * Global application styles
+ */
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Ensure smooth rendering */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Performance optimizations */
+img,
+video {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Print styles */
+@media print {
+  .site-nav,
+  .site-footer {
+    display: none;
+  }
+}

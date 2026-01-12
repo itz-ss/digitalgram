@@ -1,0 +1,43 @@
+{
+  "title": "How We Work",
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "The Brand Therapy Session",
+      "description": "We understand your brand, goals, and challenges.",
+      "image": "/assets/HowWeWork/one.jpg",
+      "alignment": "right"
+    },
+    {
+      "id": "step-2",
+      "title": "The Secret Recipe",
+      "description": "Strategy, creativity, and data combined.",
+      "image": "/assets/HowWeWork/two.jpg",
+      "alignment": "left"
+    },
+    {
+      "id": "step-3",
+      "title": "Execution",
+      "description": "Campaigns and systems go live.",
+      "image": "/assets/HowWeWork/three.jpg",
+      "alignment": "right"
+    },
+    {
+      "id": "step-4",
+      "title": "Optimization & Scaling",
+      "description": "We measure and scale what works.",
+      "image": "/assets/HowWeWork/four.webp",
+      "alignment": "left"
+    }
+  ],
+  "animation": {
+    "radius": 260,
+    "arcAngle": 0.6,
+    "scrollOffset": {
+      "start": "start 0.3",
+      "end": "end 0.7"
+    },
+    "opacityRange": [0.6, 0.9, 1],
+    "opacityValues": [1, 0.6, 0]
+  }
+}

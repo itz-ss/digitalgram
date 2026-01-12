@@ -1,0 +1,15 @@
+.rotating-text {
+  position: relative;
+  display: inline-block;
+  min-width: 8ch;
+  height: 1.2em;
+  overflow: hidden;
+  vertical-align: baseline;
+}
+
+.rotating-text__word {
+  position: absolute;
+  left: 0;
+  top: 0;
+  white-space: nowrap;
+}
