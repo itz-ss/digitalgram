@@ -15,14 +15,18 @@ import {
   staggerItem,
 } from "../animations/motionVariants";
 
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import FormModal from "./FormModal";
 import "./style/Navbar.css";
+
+const MotionLink = motion(Link);
 
 /* =========================
    CONFIG
 ========================= */
 const NAV_LINKS = [
-  { href: "#services", label: "Services" },
+  { href: "#home", label: "Home" },
+  { href: "/services", label: "Services" },
   { href: "#how", label: "How we work" },
   { href: "#contact", label: "Contact" },
 ];
@@ -67,10 +71,27 @@ const Navbar = () => {
     if (isFormOpen) setMobileMenuOpen(false);
   }, [isFormOpen]);
 
+  // Router helpers for navigating to routes vs scrolling to anchors
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [pendingHash, setPendingHash] = useState(null);
+
+  useEffect(() => {
+    if (pendingHash && location.pathname === "/") {
+      const id = pendingHash.replace("#", "");
+      const target = document.getElementById(id);
+      if (target) {
+        // small timeout to ensure DOM is stable after navigation
+        setTimeout(() => target.scrollIntoView({ behavior: "smooth" }), 50);
+      }
+      setPendingHash(null);
+    }
+  }, [location, pendingHash]);
+
   const scrollToSection = (href) => {
     const target = document.getElementById(href.replace("#", ""));
     target?.scrollIntoView({ behavior: "smooth" });
-  };
+  }; 
 
   const handleContactClick = () => {
     setIsFormOpen(true);
@@ -108,24 +129,50 @@ const Navbar = () => {
           {/* DESKTOP NAV */}
           {isDesktop && (
             <div className="nav-links nav-links-center">
-              {NAV_LINKS.map((link) => (
-                <motion.a
-                  key={link.href}
-                  href={link.href}
-                  className="nav-link"
-                  variants={reduceMotion ? undefined : linkHover}
-                  whileHover={reduceMotion ? undefined : "hover"}
-                  transition={{ duration: 0.2 }}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection(link.href);
-                  }}
-                >
-                  {link.label}
-                </motion.a>
-              ))}
+              {NAV_LINKS.map((link) => {
+                const isRoute = link.href.startsWith("/");
+                if (isRoute) {
+                  return (
+                    <MotionLink
+                      key={link.href}
+                      to={link.href}
+                      className="nav-link"
+                      variants={reduceMotion ? undefined : linkHover}
+                      whileHover={reduceMotion ? undefined : "hover"}
+                      transition={{ duration: 0.2 }}
+                      onClick={() => {
+                        setMobileMenuOpen(false);
+                      }}
+                    >
+                      {link.label}
+                    </MotionLink>
+                  );
+                }
+
+                return (
+                  <motion.a
+                    key={link.href}
+                    href={link.href}
+                    className="nav-link"
+                    variants={reduceMotion ? undefined : linkHover}
+                    whileHover={reduceMotion ? undefined : "hover"}
+                    transition={{ duration: 0.2 }}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      if (location.pathname === "/") {
+                        scrollToSection(link.href);
+                      } else {
+                        setPendingHash(link.href);
+                        navigate("/", { replace: false });
+                      }
+                    }}
+                  >
+                    {link.label}
+                  </motion.a>
+                );
+              })}
             </div>
-          )}
+          )} 
 
           {/* DESKTOP CTA */}
           {isDesktop && (
@@ -172,21 +219,43 @@ const Navbar = () => {
                 initial="hidden"
                 animate="visible"
               >
-                {NAV_LINKS.map((link) => (
-                  <motion.a
-                    key={link.href}
-                    href={link.href}
-                    className="mobile-menu-link"
-                    variants={reduceMotion ? undefined : staggerItem}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setMobileMenuOpen(false);
-                      scrollToSection(link.href);
-                    }}
-                  >
-                    {link.label}
-                  </motion.a>
-                ))}
+                {NAV_LINKS.map((link) => {
+                  const isRoute = link.href.startsWith("/");
+                  if (isRoute) {
+                    return (
+                      <MotionLink
+                        key={link.href}
+                        to={link.href}
+                        className="mobile-menu-link"
+                        variants={reduceMotion ? undefined : staggerItem}
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {link.label}
+                      </MotionLink>
+                    );
+                  }
+
+                  return (
+                    <motion.a
+                      key={link.href}
+                      href={link.href}
+                      className="mobile-menu-link"
+                      variants={reduceMotion ? undefined : staggerItem}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setMobileMenuOpen(false);
+                        if (location.pathname === "/") {
+                          scrollToSection(link.href);
+                        } else {
+                          setPendingHash(link.href);
+                          navigate("/", { replace: false });
+                        }
+                      }}
+                    >
+                      {link.label}
+                    </motion.a>
+                  );
+                })}
 
                 <motion.button
                   className="mobile-menu-contact"

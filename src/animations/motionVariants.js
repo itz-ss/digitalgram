@@ -1,16 +1,12 @@
 // ============================================
 // SCROLL-DRIVEN ANIMATIONS
 // ============================================
-
 /**
  * Fade up animation - scroll-driven
  */
 export const fadeUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.9, ease: [0.25, 0.1, 0.25, 1] }
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 1.5, ease: [0.25, 0.1, 0.25, 1] }
   }
 };
 
@@ -53,7 +49,7 @@ export const fadeInRight = {
  * Scale in animation - scroll-driven
  */
 export const scaleIn = {
-  hidden: { opacity: 0, scale: 0.9 },
+  hidden: { opacity: 0, scale: 0.2 },
   visible: {
     opacity: 1,
     scale: 1,
@@ -69,8 +65,8 @@ export const staggerContainer = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.1
+      staggerChildren: 0.2,
+      delayChildren: 0.2
     }
   }
 };

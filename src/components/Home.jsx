@@ -9,9 +9,9 @@ const Home = () => {
   return (
     <>
       <AppBackground />
-      <Welcome />
+      {/* <Welcome /> */}
       <HeroClip />
-      <Services />
+      {/* <Services /> */}
       <HowWeWork />
       <Contact />
     </>

@@ -16,6 +16,7 @@ const HowWeWork = () => {
 
   return (
     <section id="how" ref={sectionRef} className="how-section">
+      <div className="howWeWork_forground">
       <motion.h2
         className="how-title"
         variants={reduce ? undefined : fadeUp}
@@ -38,6 +39,7 @@ const HowWeWork = () => {
             isLast={index === totalSteps - 1}
           />
         ))}
+      </div>
       </div>
     </section>
   );

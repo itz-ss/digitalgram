@@ -19,7 +19,12 @@
   font-weight: var(--font-weight-bold);
   letter-spacing: -0.02em;
 }
-
+.howWeWork_forground{
+  background: rgba(255, 255, 255, 0.2);
+  padding: 30px 20px 30px 20px;
+  border: 2px solid rgba(124, 72, 245, 0.3);
+  border-radius: var(--radius-lg);
+}
 /* =========================
    TIMELINE
 ========================= */

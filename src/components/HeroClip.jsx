@@ -2,6 +2,7 @@ import { memo, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import "./style/HeroClip.css";
 import HeroVid from "../assets/HeroVid.mp4";
+import Welcome from "./Welcome";
 
 const VIDEO_SRC = HeroVid;
 
@@ -50,7 +51,7 @@ const HeroClip = ({ children }) => {
 
       {/* Slot for injected JSX */}
       <div className="video-content">
-        {children}
+        <Welcome/>
       </div>
     </motion.section>
   );

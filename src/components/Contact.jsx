@@ -1,6 +1,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import contactData from "../data/contact.json";
 import "./style/Contact.css";
+import { fadeUp } from "../animations/motionVariants";
 
 const fadeSection = {
   hidden: { opacity: 0, y: 32 },
@@ -18,7 +19,7 @@ const Contact = () => {
     <section id="contact" className="contact-section">
       <motion.div
         className="contact-container"
-        variants={reduceMotion ? undefined : fadeSection}
+        variants={reduceMotion ? undefined : fadeUp}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
