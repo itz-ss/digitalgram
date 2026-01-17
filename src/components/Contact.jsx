@@ -3,15 +3,6 @@ import contactData from "../data/contact.json";
 import "./style/Contact.css";
 import { fadeUp } from "../animations/motionVariants";
 
-const fadeSection = {
-  hidden: { opacity: 0, y: 32 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut" }
-  }
-};
-
 const Contact = () => {
   const reduceMotion = useReducedMotion();
 

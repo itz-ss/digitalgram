@@ -1,0 +1,53 @@
+/**
+ * RotatingText Component Styles
+ * Smooth text rotation animations
+ */
+
+.text-rotate {
+  display: inline-block;
+  position: relative;
+}
+
+.text-rotate-sr-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.text-rotate-word {
+  display: inline-block;
+  position: relative;
+}
+
+.text-rotate-element {
+  display: inline-block;
+  position: relative;
+}
+
+.text-rotate-space {
+  display: inline-block;
+  width: 0.3em;
+}
+
+.text-rotate-lines {
+  display: block;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .text-rotate-element {
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-rotate-element {
+    font-size: 0.85em;
+  }
+}

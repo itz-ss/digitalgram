@@ -1,26 +1,61 @@
 /**
  * Global Styles & CSS Variables
- * Professional base styling for Digitalgram
+ * Elegant Glass Finish Color Palette
  */
 
 :root {
-  /* Color Palette */
-  --color-primary: rgb(37, 34, 255);
-  --color-primary-light: #1a2332;
-  --color-secondary: wheat;
-  --color-accent: #646cff;
-  --color-accent-hover: #535bf2;
+  /* =========================
+     ELEGANT GLASS COLOR PALETTE
+     ======================== */
   
-  /* Neutral Colors */
-  --color-white: #ffffff;
-  --color-gray-50: #f7f8fb;
-  --color-gray-100: #f0f1f4;
-  --color-gray-200: #eaeaea;
-  --color-gray-300: #eef2f6;
-  --color-gray-400: #cbd5e0;
-  --color-gray-500: #4b6578;
-  --color-gray-600: #233143;
-  --color-gray-900: #0b1223;
+  /* Primary Colors - Deep & Rich */
+  --color-primary: rgba(167, 139, 250, 0.95); /* Soft Lavender */
+  --color-primary-light: rgba(192, 165, 249, 0.8); /* Light Lavender */
+  --color-primary-dark: rgba(139, 92, 246, 0.9); /* Medium Purple */
+  --color-primary-solid: #a78bfa; /* Solid Lavender for fallbacks */
+  
+  /* Secondary Colors - Elegant Neutrals */
+  --color-secondary: rgba(236, 254, 255, 0.85); /* Soft Mint Cream */
+  --color-secondary-light: rgba(255, 255, 255, 0.7); /* Light Glass */
+  --color-secondary-dark: rgba(203, 213, 225, 0.6); /* Muted Gray */
+  
+  /* Accent Colors - Vibrant Highlights */
+  --color-accent: rgba(236, 72, 153, 0.8); /* Rose Pink */
+  --color-accent-hover: rgba(244, 114, 182, 0.9); /* Light Rose */
+  --color-accent-subtle: rgba(167, 139, 250, 0.3); /* Soft Lavender Glow */
+  
+  /* Base Colors - Dark Elegant Background */
+  --color-base: #0a0a1a; /* Deep Midnight */
+  --color-base-light: #1a1a2e; /* Dark Navy */
+  --color-base-lighter: #2a2a3e; /* Medium Dark */
+  
+  /* Glass Effects - Translucent Layers */
+  --glass-white: rgba(255, 255, 255, 0.1);
+  --glass-white-light: rgba(255, 255, 255, 0.15);
+  --glass-white-medium: rgba(255, 255, 255, 0.2);
+  --glass-white-strong: rgba(255, 255, 255, 0.3);
+  
+  --glass-purple: rgba(167, 139, 250, 0.1);
+  --glass-purple-light: rgba(167, 139, 250, 0.15);
+  --glass-purple-medium: rgba(167, 139, 250, 0.2);
+  
+  --glass-rose: rgba(236, 72, 153, 0.1);
+  --glass-rose-light: rgba(236, 72, 153, 0.15);
+  
+  /* Text Colors - Elegant Contrast */
+  --color-white: rgba(255, 255, 255, 0.95);
+  --color-white-soft: rgba(255, 255, 255, 0.85);
+  --color-white-muted: rgba(255, 255, 255, 0.7);
+  
+  /* Neutral Grays - Glass Compatible */
+  --color-gray-50: rgba(241, 245, 249, 0.1);
+  --color-gray-100: rgba(226, 232, 240, 0.15);
+  --color-gray-200: rgba(203, 213, 225, 0.2);
+  --color-gray-300: rgba(148, 163, 184, 0.25);
+  --color-gray-400: rgba(100, 116, 139, 0.4);
+  --color-gray-500: rgba(71, 85, 105, 0.6);
+  --color-gray-600: rgba(51, 65, 85, 0.8);
+  --color-gray-900: rgba(15, 23, 42, 0.95);
   
   /* Typography */
   --font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", 
@@ -46,12 +81,17 @@
   --radius-lg: 16px;
   --radius-xl: 24px;
   
-  /* Shadows */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.05);
-  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
-  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
-  --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.15);
+  /* Glass Shadows - Elegant & Soft */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(167, 139, 250, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(167, 139, 250, 0.15);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(167, 139, 250, 0.2);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.25), 0 8px 10px rgba(167, 139, 250, 0.25);
+  --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.3), 0 12px 24px rgba(167, 139, 250, 0.3);
+  
+  /* Glass Glow Effects */
+  --glow-purple: 0 0 20px rgba(167, 139, 250, 0.3), 0 0 40px rgba(167, 139, 250, 0.2);
+  --glow-rose: 0 0 20px rgba(236, 72, 153, 0.3), 0 0 40px rgba(236, 72, 153, 0.2);
+  --glow-white: 0 0 20px rgba(255, 255, 255, 0.2), 0 0 40px rgba(255, 255, 255, 0.1);
   
   /* Transitions */
   --transition-fast: 150ms cubic-bezier(0.25, 0.1, 0.25, 1);
@@ -89,7 +129,7 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  scroll-padding-top: 80px; /* Account for sticky navbar */
+  scroll-padding-top: 80px;
 }
 
 /* Smooth scrolling with better performance */
@@ -108,10 +148,9 @@ body {
   font-family: var(--font-family-base);
   font-weight: var(--font-weight-normal);
   line-height: 1.6;
-  color: var(--color-gray-900);
-  /* background-color: var(--color-white); */
-  /* background-color: linear-gradient(90deg, #646cff , #eef2f6); */
-  background-color: #0b0f14;
+  color: var(--color-white-soft);
+  background: linear-gradient(135deg, var(--color-base) 0%, var(--color-base-light) 50%, #0f0f1f 100%);
+  background-attachment: fixed;
   min-width: 320px;
   overflow-x: hidden;
 }
@@ -120,7 +159,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-weight: var(--font-weight-bold);
   line-height: 1.2;
-  color: var(--color-primary);
+  color: var(--color-white);
   margin: 0;
 }
 
@@ -138,7 +177,7 @@ h3 {
 
 p {
   margin: 0;
-  color: var(--color-secondary);
+  color: var(--color-white-muted);
 }
 
 a {
@@ -205,3 +244,34 @@ img {
   background-color: var(--color-accent);
   color: var(--color-white);
 }
+
+/* =========================
+   RESPONSIVE UTILITIES
+========================= */
+
+/* Hide scrollbar on mobile for better UX */
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+  }
+}
+
+/* Ensure text doesn't overflow on small screens */
+@media (max-width: 480px) {
+  * {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  /* Prevent horizontal scroll */
+  body {
+    overflow-x: hidden;
+  }
+}
+
+

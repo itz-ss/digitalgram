@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { fadeUp, fadeIn, buttonHover, defaultViewport} from "../animations/motionVariants";
+import { fadeUp, slideInLeft, buttonHover, defaultViewport} from "../animations/motionVariants";
 import RotatingText from "../hooks/RotatingText";
+import FormModal from "./FormModal";
 import "./style/Welcome.css";
 
 const Welcome = () => {
   const reduce = useReducedMotion();
+  const [isFormOpen, setIsFormOpen] = useState(false);
 
   return (
     <section className="welcome-section" aria-label="Welcome">
@@ -19,7 +21,7 @@ const Welcome = () => {
           viewport={defaultViewport}
           transition={{ delay: 0.1}}
         >
-          Premium digital products that scale
+         Transforming Ideas Into Digital Reality
         </motion.h1>
 
         <motion.p
@@ -31,11 +33,12 @@ const Welcome = () => {
           transition={{ delay: 0.3 }}
         >
           We craft{" "}
-          <RotatingText
+          <RotatingText 
+          className="rotateText"
             words={[
               { text: "elegant", color: "#ff0000" },
-              { text: "fast", color: "#00ffbf" },
-              { text: "measurable", color: "#F5B700" }
+              { text: "fast", color: "#55006e" },
+              { text: "measurable", color: "#6d5200" }
             ]}
             interval={3000}
             direction="up"
@@ -45,7 +48,7 @@ const Welcome = () => {
 
         <motion.a
           className="welcome-cta"
-          href="#services"
+          href="/services"
           role="button"
           variants={reduce ? undefined : fadeUp}
           initial={reduce ? undefined : "hidden"}
@@ -57,7 +60,24 @@ const Welcome = () => {
         >
           Our Work
         </motion.a>
+
+        <motion.button
+          className="welcome-cta welcome-cta-secondary"
+          onClick={() => setIsFormOpen(true)}
+          role="button"
+          variants={reduce ? undefined : fadeUp}
+          initial={reduce ? undefined : "hidden"}
+          whileInView={reduce ? undefined : "visible"}
+          viewport={defaultViewport}
+          transition={{ delay: 0.7 }}
+          whileHover={reduce ? undefined : buttonHover.hover}
+          whileTap={reduce ? undefined : buttonHover.tap}
+        >
+          Get in Touch
+        </motion.button>
       </div>
+
+      <FormModal isOpen={isFormOpen} onClose={() => setIsFormOpen(false)} />
     </section>
   );
 };

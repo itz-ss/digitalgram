@@ -55,14 +55,14 @@ export const useScrollCurve = (ref, options = {}) => {
     return -radius * (1 - Math.cos(angle));
   });
 
-  // Opacity fade out
-  const opacity = useTransform(
+  // Scale for smooth appearance
+  const scale = useTransform(
     smoothProgress,
-    opacityRange,
-    opacityValues
+    [0, 0.3, 0.6],
+    [0.9, 0.95, 1]
   );
 
-  return { x, y, opacity, scrollYProgress: smoothProgress };
+  return { x, y, scale, scrollYProgress: smoothProgress };
 };
 
 /**
@@ -80,9 +80,9 @@ export const useParallax = (ref, speed = 0.5) => {
 };
 
 /**
- * Hook for fade in on scroll
+ * Hook for smooth slide in on scroll
  */
-export const useFadeInScroll = (ref, options = {}) => {
+export const useSlideInScroll = (ref, options = {}) => {
   const {
     startOffset = "start 0.8",
     endOffset = "start 0.5",
@@ -94,8 +94,8 @@ export const useFadeInScroll = (ref, options = {}) => {
     offset: [startOffset, endOffset]
   });
 
-  const opacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
   const y = useTransform(scrollYProgress, [0, 1], [yOffset, 0]);
+  const scale = useTransform(scrollYProgress, [0, 1], [0.95, 1]);
 
-  return { opacity, y };
+  return { y, scale };
 };

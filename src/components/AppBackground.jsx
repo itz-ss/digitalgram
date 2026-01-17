@@ -1,14 +1,14 @@
 import { memo } from "react";
 import "./style/AppBackground.css";
+import FloatingLines from "./Background/FloatingLines";
 
-/**
- * AppBackground
- * Global animated gradient mesh + grain texture
- * Sits behind the entire application
- * Zero interaction, zero re-render cost
- */
+
 const AppBackground = () => {
-  return <div className="app-background" aria-hidden="true" />;
+  return (
+    <div className="app-background" aria-hidden="true">
+      <FloatingLines/>
+    </div>
+  );
 };
 
 export default memo(AppBackground);

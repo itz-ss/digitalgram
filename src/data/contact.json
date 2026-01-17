@@ -16,11 +16,6 @@
       "label": "WhatsApp",
       "value": "+91 6388060502",
       "href": "https://wa.me/916388060502"
-    },
-    "location": {
-      "label": "Location",
-      "value": "Available Worldwide",
-      "href": null
     }
   },
   "socialLinks": [
@@ -35,14 +30,9 @@
       "icon": "linkedin"
     },
     {
-      "platform": "Facebook",
-      "url": "https://facebook.com/digitalgram",
-      "icon": "facebook"
-    },
-    {
-      "platform": "Twitter",
-      "url": "https://twitter.com/digitalgram",
-      "icon": "twitter"
+      "platform": "YouTube",
+      "url": "https://youtube.com/@digitalgram",
+      "icon": "youtube"
     }
   ],
   "form": {

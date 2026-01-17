@@ -35,25 +35,19 @@ export const useTimelineStep = (ref, index, totalSteps, options = {}) => {
     [0, 1, 1]
   );
 
-  // Opacity based on step progress
-  const opacity = useTransform(stepProgress, (p) => {
-    if (reduceMotion) return 1;
-    return Math.max(0, Math.min(1, p * 2));
-  });
-
-  // Y position for fade up effect
+  // Y position for smooth slide effect
   const y = useTransform(stepProgress, (p) => {
     if (reduceMotion) return 0;
-    return 30 * (1 - Math.max(0, Math.min(1, p * 2)));
+    return 40 * (1 - Math.max(0, Math.min(1, p * 1.5)));
   });
 
   // Scale for subtle zoom effect
   const scale = useTransform(stepProgress, (p) => {
     if (reduceMotion) return 1;
-    return 0.95 + 0.05 * Math.max(0, Math.min(1, p * 2));
+    return 0.9 + 0.1 * Math.max(0, Math.min(1, p * 1.5));
   });
 
-  return { opacity, y, scale, stepProgress: smoothProgress };
+  return { y, scale, stepProgress: smoothProgress };
 };
 
 /**

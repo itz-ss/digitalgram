@@ -8,8 +8,8 @@ import AppBackground from "./AppBackground";
 const Home = () => {
   return (
     <>
-      <AppBackground />
-      {/* <Welcome /> */}
+      {/* <AppBackground /> */}
+      <Welcome />
       <HeroClip />
       {/* <Services /> */}
       <HowWeWork />

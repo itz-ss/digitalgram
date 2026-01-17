@@ -1,8 +1,10 @@
 .video-hero {
   position: relative;
-  width: 100%;
+  width: 95%;
   height: 100vh;
   overflow: hidden;
+  border-radius: 20px;
+  margin: auto;
 }
 
 .video-bg {
@@ -16,7 +18,7 @@
 .video-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.35);
+
 }
 
 .video-content {
@@ -26,4 +28,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .video-hero {
+    height: 60vh;
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-hero {
+    height: 50vh;
+    min-height: 300px;
+  }
 }

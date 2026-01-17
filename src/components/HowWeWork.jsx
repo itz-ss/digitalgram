@@ -1,132 +1,120 @@
 import { useRef } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { useTimelineStep, useTimelineLine } from "../animations/timelineAnimations";
-import { fadeUp, staggerItem, defaultViewport } from "../animations/motionVariants";
+import { fadeUp, defaultViewport } from "../animations/motionVariants";
 import howWeWorkData from "../data/howWeWork.json";
 import "./style/HowWeWork.css";
-
-/* =========================
-   HOW WE WORK
-========================= */
 
 const HowWeWork = () => {
   const reduce = useReducedMotion();
   const sectionRef = useRef(null);
-  const totalSteps = howWeWorkData.steps.length;
 
   return (
-    <section id="how" ref={sectionRef} className="how-section">
-      <div className="howWeWork_forground">
-      <motion.h2
-        className="how-title"
-        variants={reduce ? undefined : fadeUp}
-        initial="hidden"
-        whileInView={reduce ? undefined : "visible"}
-        viewport={defaultViewport}
-      >
-        {howWeWorkData.title}
-      </motion.h2>
-
-      <div className="how-timeline">
-        {howWeWorkData.steps.map((step, index) => (
-          <TimelineStep
-            key={step.id}
-            step={step}
-            index={index}
-            totalSteps={totalSteps}
-            reduce={reduce}
-            sectionRef={sectionRef}
-            isLast={index === totalSteps - 1}
-          />
-        ))}
+    <section ref={sectionRef} className="how-section">
+      <div className="background-orbs">
+        <div className="orb orb-1"></div>
+        <div className="orb orb-2"></div>
       </div>
+
+      <div className="how-container">
+        <motion.h2
+          className="how-title"
+          variants={reduce ? undefined : fadeUp}
+          initial="hidden"
+          whileInView={reduce ? undefined : "visible"}
+          viewport={defaultViewport}
+        >
+          {howWeWorkData.title}
+        </motion.h2>
+
+        <div className="timeline-wrapper">
+          {howWeWorkData.steps.map((step, index) => (
+            <TimelineStep
+              key={step.id}
+              step={step}
+              index={index}
+              isLast={index === howWeWorkData.steps.length - 1}
+              alignment={step.alignment}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
 };
 
-export default HowWeWork;
-
-/* =========================
-   TIMELINE STEP
-========================= */
-
-const TimelineStep = ({
-  step,
-  index,
-  totalSteps,
-  reduce,
-  sectionRef,
-  isLast
-}) => {
-  const { opacity, y, scale } = useTimelineStep(
-    sectionRef,
-    index,
-    totalSteps,
-    { reduceMotion: reduce }
-  );
-
-  const { scaleY } = useTimelineLine(
-    sectionRef,
-    index,
-    totalSteps,
-    { reduceMotion: reduce }
-  );
-
+const TimelineStep = ({ step, index, isLast, alignment }) => {
   return (
-    <div className="how-step">
-      {/* Timeline Line */}
-      {!isLast && (
-        <motion.div
-          className="timeline-line"
-          style={{ scaleY, transformOrigin: "top" }}
-        />
-      )}
+    <motion.div
+      // className={`timeline-step ${alignment === 'left' ? 'timeline-step-left' : 'timeline-step-right'}`}
+     className="timeline-step"
+      initial={{ y: 60, scale: 0.9 }}
+      whileInView={{ y: 0, scale: 1 }}
+      viewport={defaultViewport}
+      transition={{
+        duration: 0.8,
+        delay: index * 0.1,
+        ease: [0.25, 0.1, 0.25, 1],
+        scale: { duration: 1.1, ease: [0.25, 0.1, 0.25, 1] }
+      }}
+    >
+      <div className="step-layout">
+        {/* Step Badge */}
+        <div className="step-badge-container">
+          <motion.div
+            className="step-badge"
+            whileHover={{
+              scale: 1.15,
+              rotate: 360,
+            }}
+            transition={{ duration: 0.4 }}
+          >
+            <span className="badge-number">
+              {String(index + 1).padStart(2, "0")}
+            </span>
+          </motion.div>
 
-      {/* Step Badge */}
-      <motion.div
-        className="step-badge"
-        style={{ opacity, y, scale }}
-        whileHover={
-          reduce ? undefined : { scale: 1.1, transition: { duration: 0.2 } }
-        }
-      >
-        <span className="step-number">
-          {String(index + 1).padStart(2, "0")}
-        </span>
-      </motion.div>
-
-      {/* Content */}
-      <motion.div
-        className="step-content"
-        style={{ opacity, y, scale }}
-        variants={reduce ? undefined : staggerItem}
-        initial="hidden"
-        whileInView={reduce ? undefined : "visible"}
-        viewport={defaultViewport}
-        whileHover={
-          reduce ? undefined : { y: -4, transition: { duration: 0.2 } }
-        }
-      >
-        <div className="step-content-inner">
-          <span className="step-label">Step {index + 1}</span>
-          <h3>{step.title}</h3>
-          <p>{step.description}</p>
+          {!isLast && <div className="connecting-line" />}
         </div>
 
+        {/* Card */}
         <motion.div
-          className="step-image"
-          whileHover={
-            reduce ? undefined : { scale: 1.05, transition: { duration: 0.3 } }
-          }
+          className="step-card"
+          whileHover={{ y: -8 }}
+          transition={{ duration: 0.3 }}
         >
-          <img
-            src={step.image}
-            alt={step.title}
-            loading="lazy"
-          />
+          <div className="card-inner">
+            <div className="gradient-overlay"></div>
+
+            <div className="card-content">
+              <span className="step-label">Step {index + 1}</span>
+
+              <h3 className="step-title">{step.title}</h3>
+
+              <p className="step-description">{step.description}</p>
+
+              <motion.div
+                className="step-image-wrapper"
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="image-overlay"></div>
+                <img
+                  src={step.image}
+                  alt={step.title}
+                  className="step-image"
+                  loading="lazy"
+                />
+
+                
+              </motion.div>
+            </div>
+
+            <div className="corner-accent"></div>
+          </div>
         </motion.div>
-      </motion.div>
-    </div>
+      </div>
+    </motion.div>
   );
 };
+
+export default HowWeWork;

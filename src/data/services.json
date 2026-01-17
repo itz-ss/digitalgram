@@ -1,39 +1,7 @@
 {
   "tabs": [
-    {
-      "id": "strategy",
-      "label": "Strategy & Growth",
-      "title": "Strategy, Consulting & Growth Planning",
-      "description": "Strong growth starts with clarity. We define strategy, positioning, and execution paths that scale.",
-      "detailedDescription": "Digital Marketing Strategy & Planning Agency - Have a look at our most innovative strategies here! The key to a successful campaign is a well thought-out strategy. The DigitalGram team, with their unmatched years of experience, create and execute the ideal strategies and plans for your business, keeping in mind the final outcome and the end goal.\n\nWith any and every strategy that we implement, though, we always aim to grow your brand and increase your revenue. Our approach is equal parts creative and technical, with data playing a key and central role. We focus on helping you realise your digital goals to the fullest, while ensuring that creativity doesn't get put in the back seat. We truly do love a challenge and while we do let our creative juices flow, we also ensure that the plan we present to you is realistic, achievable and doable.\n\nAlong with this, we try to create an immersive and unforgettable experience for your audience that is completely unmatched. It doesn't matter if you're a startup or a multi-national company - we are confident that our team will provide you with a strategy that will hit your targets bang on! Our young, creative, and highly experienced social, design and digital planning teams are brimming with unique ideas that will take your brand and business to the next level.",
-      "image": "/assets/HowWeWork/one.jpg",
-      "items": [
-        "Digital Growth Strategy",
-        "Competitor Analysis",
-        "Brand Positioning",
-        "Campaign Audits",
-        "Scaling & Optimization Consulting"
-      ]
-    },
-    {
-      "id": "performance",
-      "label": "Performance Marketing",
-      "title": "Performance Marketing (Paid Advertising)",
-      "description": "Data-driven paid campaigns focused on leads, conversions, and ROI.",
-      "detailedDescription": "Performance Marketing Agency - Where Data Meets Results! In the world of digital advertising, every rupee counts. That's why our performance marketing team at DigitalGram is obsessed with metrics, conversions, and ROI. We don't just run ads - we engineer profitable campaigns that turn clicks into customers and impressions into revenue.\n\nOur approach to paid advertising is rooted in continuous testing, optimization, and scaling. From Meta Ads to Google Search campaigns, we leverage advanced targeting, audience segmentation, and retargeting strategies to ensure your ad spend works harder for you. We believe in transparency, which is why we provide detailed reporting and insights that show exactly where your money is going and what results you're getting.\n\nWhether you're looking to generate high-quality leads, drive e-commerce sales, or build brand awareness at scale, our performance marketing experts craft campaigns that are laser-focused on your business objectives. With real-time optimization and funnel mapping, we ensure that every stage of your customer journey is optimized for maximum conversion. Let's turn your ad budget into a growth engine!",
-      "image": "performance-marketing-ads.jpg",
-      "items": [
-        "Meta Ads (Facebook & Instagram)",
-        "Google Search Ads",
-        "Google Display & YouTube Ads",
-        "Lead Generation Campaigns",
-        "Conversion Tracking Setup",
-        "Funnel Strategy & Scaling",
-        "Retargeting & Lookalike Audiences"
-      ]
-    },
-    {
-      "id": "social",
+    { 
+      "id": "social", 
       "label": "Social Media Marketing",
       "title": "Social Media Marketing (SMM)",
       "description": "Build brand presence, community, and reach with structured social media execution.",
@@ -64,6 +32,89 @@
         "Content Editing & Optimization"
       ]
     },
+     {
+      "id": "web",
+      "label": "Web & Funnels",
+      "title": "Website & Funnel Development",
+      "description": "Conversion-focused websites and funnels built for performance.",
+      "detailedDescription": "Website & Funnel Development Agency - Where Design Meets Conversion! Your website is often the first impression potential customers have of your brand - make it count. At WeBeeSocial, we don't just build beautiful websites; we create conversion machines that turn visitors into customers. Our web development team combines stunning design with strategic user experience to create digital properties that drive results.\n\nWe understand that every click, scroll, and form submission matters. That's why our approach to website and funnel development is rooted in conversion optimization. From landing pages that capture attention to sales funnels that guide users through the buying journey, we design every element with one goal in mind: getting results. Our pages load fast, look great on every device, and are optimized for search engines.\n\nWhether you need a simple landing page for a campaign or a complex sales funnel with multiple touchpoints, we've got you covered. We integrate powerful tools like WhatsApp for instant communication, implement lead capture systems that work 24/7, and continuously optimize for better performance. Our data-driven approach means we're always testing and improving to maximize your conversion rates. Let's build a digital presence that doesn't just look good - it works hard for your business!",
+      "image": "website-funnel-development.jpg",
+      "items": [
+        "Landing Page Design",
+        "Sales Funnel Creation",
+        "Lead Capture Pages",
+        "WhatsApp Integration",
+        "Conversion Optimization (CRO)"
+      ]
+    },
+    {
+      "id": "PR",
+      "label": "PR",
+      "title": "Public Relations Services",
+      "description": "Strategic PR campaigns to build brand awareness and credibility.",
+      "detailedDescription": "Public Relations Agency - Shaping Narratives, Building Credibility! In the age of information overload, getting your brand's story told by trusted media outlets is invaluable. At WeBeeSocial, our PR team specializes in securing media coverage that builds credibility, establishes thought leadership, and amplifies your brand message to wider audiences. We craft compelling narratives that journalists want to cover.\n\nOur public relations services go beyond just sending press releases. We develop strategic PR campaigns that position your brand as an industry leader, connect you with relevant journalists and publications, and secure features that enhance your reputation. From startup launches to product announcements to crisis management, we handle every aspect of your public relations with professionalism and precision.\n\nWe understand that media coverage lends third-party credibility that advertising simply can't buy. That's why we work tirelessly to build relationships with journalists, craft newsworthy angles, and secure placements in publications your audience trusts. Our founder profiling and thought leadership initiatives position your key executives as industry experts, while our comprehensive tracking shows the impact of every media mention. Whether you're looking to raise your profile or manage your narrative during challenging times, our PR team has you covered. Let's tell your story to the world!",
+      "image": "public-relations-pr.jpg",
+      "items": [
+        "PR Strategy & Positioning",
+        "Press Release Writing & Distribution",
+        "Media Outreach & Journalist Pitching",
+        "Media List Building & Targeting",
+        "Press Coverage / Feature Placement",
+        "Thought Leadership & Founder Profiling",
+        "Crisis Communication Planning",
+        "PR Reporting & Coverage Tracking"
+      ]
+    },
+    {
+      "id": "influencer",
+      "label": "Influencer Marketing",
+      "title": "Influencer Marketing Services",
+      "description": "End-to-end influencer campaigns with measurable ROI.",
+      "detailedDescription": "Influencer Marketing Agency - Amplify Your Reach Through Authentic Voices! Influencer marketing has evolved from a trend to a powerful channel for brand growth. At WeBeeSocial, we connect brands with the right influencers to create authentic campaigns that drive real results. Our end-to-end influencer marketing services take the guesswork out of influencer partnerships and deliver measurable ROI.\n\nWe don't just find influencers with large followings - we find the right influencers whose audience aligns with your target market. Our team handles everything from campaign strategy and influencer discovery to negotiation, content approval, and performance tracking. We ensure that every collaboration is authentic, on-brand, and optimized for maximum impact.\n\nWhether you're launching a new product, building brand awareness, or driving sales, influencer marketing can amplify your message to engaged audiences. We work across micro-influencers for niche targeting to macro-influencers for mass reach, creating campaigns that feel natural and resonate with audiences. Our paid amplification strategies extend the reach of influencer content even further, while our detailed reporting shows exactly what ROI you're getting from each partnership. Let's harness the power of influencer marketing to take your brand to new heights!",
+      "image": "influencer-marketing.jpg",
+      "items": [
+        "Influencer Campaign Planning",
+        "Influencer Discovery & Selection",
+        "Influencer Outreach & Management",
+        "Sponsored Reels & Posts",
+        "Brand Integrations",
+        "Paid Amplification of Influencer Content",
+        "Campaign Tracking & ROI Reporting",
+        "Industry-Specific Influencer Campaigns"
+      ]
+    },
+    {
+      "id": "performance",
+      "label": "Performance Marketing",
+      "title": "Google & Meta Advertising",
+      "description": "Data-driven paid campaigns focused on leads, conversions, and ROI.",
+      "detailedDescription": "Performance Marketing Agency - Where Data Meets Results! In the world of digital advertising, every rupee counts. That's why our performance marketing team at DigitalGram is obsessed with metrics, conversions, and ROI. We don't just run ads - we engineer profitable campaigns that turn clicks into customers and impressions into revenue.\n\nOur approach to paid advertising is rooted in continuous testing, optimization, and scaling. From Meta Ads to Google Search campaigns, we leverage advanced targeting, audience segmentation, and retargeting strategies to ensure your ad spend works harder for you. We believe in transparency, which is why we provide detailed reporting and insights that show exactly where your money is going and what results you're getting.\n\nWhether you're looking to generate high-quality leads, drive e-commerce sales, or build brand awareness at scale, our performance marketing experts craft campaigns that are laser-focused on your business objectives. With real-time optimization and funnel mapping, we ensure that every stage of your customer journey is optimized for maximum conversion. Let's turn your ad budget into a growth engine!",
+      "image": "performance-marketing-ads.jpg",
+      "items": [
+        "Meta Ads (Facebook & Instagram)",
+        "Google Search Ads",
+        "Google Display & YouTube Ads",
+        "Lead Generation Campaigns",
+        "Conversion Tracking Setup",
+        "Funnel Strategy & Scaling",
+        "Retargeting & Lookalike Audiences"
+      ]
+    },
+    {
+      "id": "strategy",
+      "label": "Strategy & Growth",
+      "title": "Strategy, Consulting & Growth Planning",
+      "description": "Strong growth starts with clarity. We define strategy, positioning, and execution paths that scale.",
+      "detailedDescription": "Digital Marketing Strategy & Planning Agency - Have a look at our most innovative strategies here! The key to a successful campaign is a well thought-out strategy. The DigitalGram team, with their unmatched years of experience, create and execute the ideal strategies and plans for your business, keeping in mind the final outcome and the end goal.\n\nWith any and every strategy that we implement, though, we always aim to grow your brand and increase your revenue. Our approach is equal parts creative and technical, with data playing a key and central role. We focus on helping you realise your digital goals to the fullest, while ensuring that creativity doesn't get put in the back seat. We truly do love a challenge and while we do let our creative juices flow, we also ensure that the plan we present to you is realistic, achievable and doable.\n\nAlong with this, we try to create an immersive and unforgettable experience for your audience that is completely unmatched. It doesn't matter if you're a startup or a multi-national company - we are confident that our team will provide you with a strategy that will hit your targets bang on! Our young, creative, and highly experienced social, design and digital planning teams are brimming with unique ideas that will take your brand and business to the next level.",
+      "image": "/assets/HowWeWork/one.jpg",
+      "items": [
+        "Digital Growth Strategy",
+        "Competitor Analysis",
+        "Brand Positioning",
+        "Campaign Audits",
+        "Scaling & Optimization Consulting"
+      ]
+    },
     {
       "id": "production",
       "label": "Brand Shoots",
@@ -77,21 +128,6 @@
         "Promotional Video Shoots",
         "Reels & Ad Video Production",
         "Editing & Color Grading"
-      ]
-    },
-    {
-      "id": "web",
-      "label": "Web & Funnels",
-      "title": "Website & Funnel Development",
-      "description": "Conversion-focused websites and funnels built for performance.",
-      "detailedDescription": "Website & Funnel Development Agency - Where Design Meets Conversion! Your website is often the first impression potential customers have of your brand - make it count. At WeBeeSocial, we don't just build beautiful websites; we create conversion machines that turn visitors into customers. Our web development team combines stunning design with strategic user experience to create digital properties that drive results.\n\nWe understand that every click, scroll, and form submission matters. That's why our approach to website and funnel development is rooted in conversion optimization. From landing pages that capture attention to sales funnels that guide users through the buying journey, we design every element with one goal in mind: getting results. Our pages load fast, look great on every device, and are optimized for search engines.\n\nWhether you need a simple landing page for a campaign or a complex sales funnel with multiple touchpoints, we've got you covered. We integrate powerful tools like WhatsApp for instant communication, implement lead capture systems that work 24/7, and continuously optimize for better performance. Our data-driven approach means we're always testing and improving to maximize your conversion rates. Let's build a digital presence that doesn't just look good - it works hard for your business!",
-      "image": "website-funnel-development.jpg",
-      "items": [
-        "Landing Page Design",
-        "Sales Funnel Creation",
-        "Lead Capture Pages",
-        "WhatsApp Integration",
-        "Conversion Optimization (CRO)"
       ]
     },
     {
@@ -151,42 +187,6 @@
         "CRM Integration",
         "Email Marketing Automation",
         "Customer Retention Campaigns"
-      ]
-    },
-    {
-      "id": "influencer",
-      "label": "Influencer Marketing",
-      "title": "Influencer Marketing Services",
-      "description": "End-to-end influencer campaigns with measurable ROI.",
-      "detailedDescription": "Influencer Marketing Agency - Amplify Your Reach Through Authentic Voices! Influencer marketing has evolved from a trend to a powerful channel for brand growth. At WeBeeSocial, we connect brands with the right influencers to create authentic campaigns that drive real results. Our end-to-end influencer marketing services take the guesswork out of influencer partnerships and deliver measurable ROI.\n\nWe don't just find influencers with large followings - we find the right influencers whose audience aligns with your target market. Our team handles everything from campaign strategy and influencer discovery to negotiation, content approval, and performance tracking. We ensure that every collaboration is authentic, on-brand, and optimized for maximum impact.\n\nWhether you're launching a new product, building brand awareness, or driving sales, influencer marketing can amplify your message to engaged audiences. We work across micro-influencers for niche targeting to macro-influencers for mass reach, creating campaigns that feel natural and resonate with audiences. Our paid amplification strategies extend the reach of influencer content even further, while our detailed reporting shows exactly what ROI you're getting from each partnership. Let's harness the power of influencer marketing to take your brand to new heights!",
-      "image": "influencer-marketing.jpg",
-      "items": [
-        "Influencer Campaign Planning",
-        "Influencer Discovery & Selection",
-        "Influencer Outreach & Management",
-        "Sponsored Reels & Posts",
-        "Brand Integrations",
-        "Paid Amplification of Influencer Content",
-        "Campaign Tracking & ROI Reporting",
-        "Industry-Specific Influencer Campaigns"
-      ]
-    },
-    {
-      "id": "PR",
-      "label": "PR",
-      "title": "Public Relations Services",
-      "description": "Strategic PR campaigns to build brand awareness and credibility.",
-      "detailedDescription": "Public Relations Agency - Shaping Narratives, Building Credibility! In the age of information overload, getting your brand's story told by trusted media outlets is invaluable. At WeBeeSocial, our PR team specializes in securing media coverage that builds credibility, establishes thought leadership, and amplifies your brand message to wider audiences. We craft compelling narratives that journalists want to cover.\n\nOur public relations services go beyond just sending press releases. We develop strategic PR campaigns that position your brand as an industry leader, connect you with relevant journalists and publications, and secure features that enhance your reputation. From startup launches to product announcements to crisis management, we handle every aspect of your public relations with professionalism and precision.\n\nWe understand that media coverage lends third-party credibility that advertising simply can't buy. That's why we work tirelessly to build relationships with journalists, craft newsworthy angles, and secure placements in publications your audience trusts. Our founder profiling and thought leadership initiatives position your key executives as industry experts, while our comprehensive tracking shows the impact of every media mention. Whether you're looking to raise your profile or manage your narrative during challenging times, our PR team has you covered. Let's tell your story to the world!",
-      "image": "public-relations-pr.jpg",
-      "items": [
-        "PR Strategy & Positioning",
-        "Press Release Writing & Distribution",
-        "Media Outreach & Journalist Pitching",
-        "Media List Building & Targeting",
-        "Press Coverage / Feature Placement",
-        "Thought Leadership & Founder Profiling",
-        "Crisis Communication Planning",
-        "PR Reporting & Coverage Tracking"
       ]
     }
   ]

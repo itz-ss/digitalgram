@@ -1,6 +1,6 @@
 import React from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { fadeIn, staggerContainer, staggerItem, defaultViewport } from "../animations/motionVariants";
+import {  staggerItem, defaultViewport } from "../animations/motionVariants";
 import servicesData from "../data/services.json";
 import contactData from "../data/contact.json";
 import "./style/Footer.css";
@@ -10,30 +10,6 @@ const WHATSAPP_NUMBER = "916388060502"; // Format: country code + number
 const Footer = () => {
   const reduce = useReducedMotion();
   const currentYear = new Date().getFullYear();
-
-  // Group services into categories
-  const serviceCategories = [
-    {
-      title: "Strategy & Growth",
-      services: ["Strategy & Growth", "Performance Marketing", "SEO"]
-    },
-    {
-      title: "Marketing",
-      services: ["Social Media Marketing", "Content & Creatives", "Influencer Marketing"]
-    },
-    {
-      title: "Development",
-      services: ["Web & Funnels", "Local Business Marketing", "Automation & CRM"]
-    },
-    {
-      title: "Creative",
-      services: ["Brand Shoots", "Reputation Management"]
-    }
-  ];
-
-  const getServiceByLabel = (label) => {
-    return servicesData.tabs.find((tab) => tab.label === label);
-  };
 
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent("Hello! I'd like to learn more about your services.");
@@ -48,7 +24,7 @@ const Footer = () => {
           {/* Brand Section */}
           <motion.div
             className="footer-section footer-brand-section"
-            variants={reduce ? undefined : fadeIn}
+            variants={reduce ? undefined : staggerItem}
             initial="hidden"
             whileInView={reduce ? undefined : "visible"}
             viewport={defaultViewport}
@@ -80,42 +56,42 @@ const Footer = () => {
             </div>
           </motion.div>
 
-          {/* Services Sections */}
-          {serviceCategories.map((category, categoryIndex) => {
-            const categoryServices = category.services
-              .map((label) => getServiceByLabel(label))
-              .filter(Boolean);
+          {/* Services Section */}
+          <motion.div
+            className="footer-section footer-services-section"
+            variants={reduce ? undefined : staggerItem}
+            initial="hidden"
+            whileInView={reduce ? undefined : "visible"}
+            viewport={defaultViewport}
+            transition={{ delay: 0.1 }}
+          >
+            <h4 className="footer-section-title">Services</h4>
+            <div className="footer-services-columns">
+              {Array.from({ length: 3 }, (_, columnIndex) => {
+                const servicesPerColumn = Math.ceil(servicesData.tabs.length / 3);
+                const startIndex = columnIndex * servicesPerColumn;
+                const endIndex = Math.min(startIndex + servicesPerColumn, servicesData.tabs.length);
+                const columnServices = servicesData.tabs.slice(startIndex, endIndex);
 
-            if (categoryServices.length === 0) return null;
-
-            return (
-              <motion.div
-                key={category.title}
-                className="footer-section footer-services-section"
-                variants={reduce ? undefined : fadeIn}
-                initial="hidden"
-                whileInView={reduce ? undefined : "visible"}
-                viewport={defaultViewport}
-                transition={{ delay: 0.1 + categoryIndex * 0.05 }}
-              >
-                <h4 className="footer-section-title">{category.title}</h4>
-                <ul className="footer-services-list">
-                  {categoryServices.map((service) => (
-                    <li key={service.id}>
-                      <a href={`#services`} className="footer-service-link">
-                        {service.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            );
-          })}
+                return (
+                  <ul key={columnIndex} className="footer-services-list">
+                    {columnServices.map((service) => (
+                      <li key={service.id}>
+                        <a href={`/services/${service.id}`} className="footer-service-link">
+                          {service.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                );
+              })}
+            </div>
+          </motion.div>
 
           {/* Contact Section */}
           <motion.div
             className="footer-section footer-contact-section"
-            variants={reduce ? undefined : fadeIn}
+            variants={reduce ? undefined : staggerItem}
             initial="hidden"
             whileInView={reduce ? undefined : "visible"}
             viewport={defaultViewport}
@@ -145,12 +121,12 @@ const Footer = () => {
                   WhatsApp
                 </button>
               </li>
-              <li>
+              {/* <li>
                 <span className="footer-contact-link">
                   <span className="contact-icon">📍</span>
                   {contactData.contactInfo.location.value}
                 </span>
-              </li>
+              </li> */}
             </ul>
           </motion.div>
         </div>
@@ -158,7 +134,7 @@ const Footer = () => {
         {/* Footer Bottom */}
         <motion.div
           className="footer-bottom"
-          variants={reduce ? undefined : fadeIn}
+          variants={reduce ? undefined : staggerItem}
           initial="hidden"
           whileInView={reduce ? undefined : "visible"}
           viewport={defaultViewport}
@@ -167,11 +143,7 @@ const Footer = () => {
           <div className="footer-copyright">
             © {currentYear} Digitalgram. All rights reserved.
           </div>
-          <div className="footer-links">
-            <a href="#services">Services</a>
-            <a href="#how">How We Work</a>
-            <a href="#contact">Contact</a>
-          </div>
+          
         </motion.div>
       </div>
     </footer>

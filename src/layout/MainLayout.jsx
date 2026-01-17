@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import AppBackground from "../components/AppBackground";
 import "./style/mainLayout.css";
 
 const MainLayout = () => {
@@ -9,6 +10,7 @@ const MainLayout = () => {
       <Navbar />
 
       <main className="content-area">
+        <AppBackground/>
         <Outlet />
       </main>
 

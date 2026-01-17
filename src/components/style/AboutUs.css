@@ -1,19 +1,20 @@
 /* =========================================
-   Service Detail - Elegant Glass Finish
+   About Us - Elegant Glass Finish
    Updated with Premium Glass Color Palette
 ========================================= */
 
-.service-detail {
+.about-us {
   min-height: 100vh;
   background: transparent;
   color: var(--color-white-soft);
   position: relative;
   padding: clamp(18px, 2vw, 28px);
   text-align: justify;
+  overflow-x: hidden;
 }
 
 /* Close button - Glass effect */
-.service-detail__close-btn {
+.about-us__close-btn {
   position: fixed;
   top: 25px;
   right: 18px;
@@ -37,20 +38,20 @@
   }
 }
 
-.service-detail__close-btn:hover {
+.about-us__close-btn:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg), var(--glow-purple);
   background: var(--glass-white-strong);
   color: var(--color-white);
 }
 
-.service-detail__wrapper {
+.about-us__wrapper {
   width: min(1200px, 100%);
   margin: 0 auto;
 }
 
 /* HERO */
-.service-detail__hero {
+.about-us__hero {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
   gap: clamp(18px, 3vw, 44px);
@@ -60,7 +61,7 @@
 }
 
 /* subtle background blob - glass effect */
-.service-detail__hero::before {
+.about-us__hero::before {
   content: "";
   position: absolute;
   right: -80px;
@@ -80,12 +81,12 @@
 }
 
 /* Left */
-.service-detail__hero-left {
+.about-us__hero-left {
   position: relative;
   z-index: 2;
 }
 
-.service-detail__eyebrow {
+.about-us__eyebrow {
   font-size: 13px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -93,7 +94,7 @@
   margin-bottom: 10px;
 }
 
-.service-detail__title {
+.about-us__title {
   font-size: clamp(32px, 4vw, 52px);
   text-align: left;
   line-height: 1.06;
@@ -103,7 +104,7 @@
   text-shadow: 0 2px 8px rgba(167, 139, 250, 0.3);
 }
 
-.service-detail__desc {
+.about-us__desc {
   font-size: clamp(15px, 1.4vw, 18px);
   line-height: 1.75;
   color: var(--color-white-muted);
@@ -111,7 +112,7 @@
   max-width: 64ch;
 }
 
-.service-detail__hero-actions {
+.about-us__hero-actions {
   display: flex;
   gap: 12px;
   margin-top: 22px;
@@ -119,9 +120,9 @@
 }
 
 /* Buttons - Glass finish */
-.service-detail__primary,
-.service-detail__secondary,
-.service-detail__back-btn {
+.about-us__primary,
+.about-us__secondary,
+.about-us__back-btn {
   border-radius: 12px;
   padding: 12px 16px;
   font-weight: 700;
@@ -131,20 +132,20 @@
   font-family: inherit;
 }
 
-.service-detail__primary {
+.about-us__primary {
   background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
   color: var(--color-white);
   box-shadow: var(--shadow-lg), var(--glow-purple);
   border: 1px solid var(--glass-white-light);
 }
 
-.service-detail__primary:hover {
+.about-us__primary:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-xl), var(--glow-rose);
   background: linear-gradient(135deg, var(--color-primary-light), var(--color-accent-hover));
 }
 
-.service-detail__secondary {
+.about-us__secondary {
   background: var(--glass-white-medium);
   backdrop-filter: blur(10px) saturate(150%);
   -webkit-backdrop-filter: blur(10px) saturate(150%);
@@ -153,21 +154,30 @@
   box-shadow: var(--shadow-md);
 }
 
-.service-detail__secondary:hover {
+.about-us__secondary:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg), var(--glow-purple);
   background: var(--glass-white-strong);
 }
 
 /* Right */
-.service-detail__hero-right {
+.about-us__hero-right {
   display: grid;
   justify-content: end;
   position: relative;
   z-index: 2;
+  margin: auto;
 }
 
-.service-detail__image-card {
+.about-us-img{
+    width: 300px;
+    margin: 0 80px 0 0;
+    @media (max-width: 480px) {
+        display: none;
+    }
+}
+
+/* .about-us__image-card {
   width: min(420px, 100%);
   background: linear-gradient(135deg, var(--glass-white-medium), var(--glass-purple-light));
   backdrop-filter: blur(20px) saturate(180%);
@@ -177,22 +187,22 @@
   padding: 18px;
   box-shadow: var(--shadow-xl), var(--glow-purple);
   transition: all 0.3s ease;
-}
+} */
 
-.service-detail__image-card:hover {
+/* .about-us__image-card:hover {
   box-shadow: var(--shadow-2xl), var(--glow-rose);
   transform: translateY(-4px);
-}
+} */
 
-.service-detail__image {
+/* .about-us__image {
   width: 100%;
   height: auto;
   border-radius: 16px;
   object-fit: cover;
   display: block;
-}
+} */
 
-.service-detail__image-fallback {
+/* .about-us__image-fallback {
   width: 100%;
   min-height: 280px;
   border-radius: 16px;
@@ -206,42 +216,42 @@
   font-weight: 800;
   color: var(--color-white-muted);
   border: 1px solid var(--glass-white);
-}
+} */
 
 /* Copy block */
-.service-detail__copy {
+.about-us__copy {
   margin: 0;
 }
 
-.service-detail__paragraph {
+.about-us__paragraph {
   font-size: 16px;
   line-height: 1.9;
   color: var(--color-white-soft);
   margin: 0 0 18px 0;
 }
 
-/* Offer Section */
-.service-detail__offer {
+/* Section styling */
+.about-us__section {
   margin-top: 36px;
   padding-top: 28px;
   border-top: 1px solid var(--glass-white-light);
 }
 
-.service-detail__offer-title {
+.about-us__section-title {
   font-size: 22px;
   margin: 0 0 6px 0;
   font-weight: 900;
   color: var(--color-white);
 }
 
-.service-detail__offer-subtitle {
+.about-us__section-subtitle {
   margin: 0 0 18px 0;
   color: var(--color-white-muted);
   line-height: 1.7;
 }
 
 /* Offer items grid - Glass cards */
-.service-detail__offer-grid {
+.about-us__offer-grid {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -250,10 +260,10 @@
   gap: 12px;
 }
 
-.service-detail__offer-item {
+.about-us__offer-item {
   display: flex;
-  gap: 10px;
-  align-items: flex-start;
+  flex-direction: column;
+  gap: 8px;
   padding: 14px 14px;
   border-radius: 16px;
   border: 1px solid var(--glass-white-light);
@@ -264,14 +274,14 @@
   box-shadow: var(--shadow-sm);
 }
 
-.service-detail__offer-item:hover {
+.about-us__offer-item:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg), var(--glow-purple);
   background: var(--glass-white-strong);
   border-color: var(--glass-purple-light);
 }
 
-.service-detail__check {
+.about-us__check {
   width: 26px;
   height: 26px;
   border-radius: 999px;
@@ -282,22 +292,62 @@
   font-weight: 900;
   flex-shrink: 0;
   box-shadow: var(--shadow-sm);
+  align-self: flex-start;
 }
 
-.service-detail__offer-text {
+.about-us__offer-text {
   color: var(--color-white-soft);
   line-height: 1.6;
   font-weight: 600;
 }
 
+.about-us__offer-desc {
+  color: var(--color-white-muted);
+  line-height: 1.5;
+  font-weight: 500;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Philosophy section */
+.about-us__philosophy {
+  margin-top: 36px;
+  padding: 28px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, var(--glass-white-medium), var(--glass-purple-light));
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--glass-white-light);
+  box-shadow: var(--shadow-xl), var(--glow-purple);
+  text-align: center;
+}
+
+.about-us__quote {
+  font-size: clamp(18px, 2vw, 24px);
+  font-weight: 700;
+  color: var(--color-white);
+  line-height: 1.4;
+  margin: 0 0 16px 0;
+  font-style: italic;
+}
+
+.about-us__quote-summary {
+  font-size: 16px;
+  color: var(--color-white-muted);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 60ch;
+  margin: 0 auto;
+}
+
 /* Bottom */
-.service-detail__bottom {
+.about-us__bottom {
   margin-top: 34px;
   display: flex;
   justify-content: center;
 }
 
-.service-detail__back-btn {
+.about-us__back-btn {
   background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
   color: var(--color-white);
   padding: 12px 18px;
@@ -306,77 +356,55 @@
   border: 1px solid var(--glass-white-light);
 }
 
-.service-detail__back-btn:hover {
+.about-us__back-btn:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-xl), var(--glow-rose);
   background: linear-gradient(135deg, var(--color-primary-light), var(--color-accent-hover));
 }
 
-/* Not Found */
-.service-detail__not-found {
-  min-height: 60vh;
-  display: grid;
-  place-items: center;
-  padding: 60px 20px;
-  text-align: center;
-  color: var(--color-white);
-}
-
-.service-detail__not-found h2 {
-  color: var(--color-white);
-  margin-bottom: var(--spacing-md);
-}
-
-.service-detail__not-found button {
-  padding: 12px 24px;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
-  color: var(--color-white);
-  border: 1px solid var(--glass-white-light);
-  border-radius: var(--radius-md);
-  cursor: pointer;
-  font-weight: var(--font-weight-semibold);
-  box-shadow: var(--shadow-md), var(--glow-purple);
-  transition: all 0.3s ease;
-}
-
-.service-detail__not-found button:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lg), var(--glow-rose);
-}
-
 /* RESPONSIVE */
 @media (max-width: 1115px) {
-   .service-detail__close-btn {
+   .about-us__close-btn {
     display: none;
   }
 }
 
 @media (max-width: 980px) {
-  .service-detail__hero {
+  .about-us__hero {
     grid-template-columns: 1fr;
     padding-top: 54px;
   }
 
-  .service-detail__hero-right {
+  .about-us__hero-right {
     justify-content: start;
   }
 
-  .service-detail__image-card {
+  /* .about-us__image-card {
     width: min(520px, 100%);
+  } */
+
+  .about-us__offer-grid {
+    grid-template-columns: 1fr;
   }
 
-  .service-detail__offer-grid {
-    grid-template-columns: 1fr;
+  .about-us__philosophy {
+    padding: 20px;
   }
 }
 
 @media (max-width: 520px) {
- 
-
-  .service-detail__primary,
-  .service-detail__secondary,
-  .service-detail__back-btn {
+  .about-us__primary,
+  .about-us__secondary,
+  .about-us__back-btn {
     width: 100%;
     justify-content: center;
+  }
+
+  .about-us__offer-item {
+    padding: 12px;
+  }
+
+  .about-us__philosophy {
+    padding: 16px;
   }
 }

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
-import { fadeIn, scaleIn } from "../animations/motionVariants";
+import { scaleIn } from "../animations/motionVariants";
 import Form from "./Form";
 import "./style/FormModal.css";
 

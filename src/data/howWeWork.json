@@ -4,29 +4,29 @@
     {
       "id": "step-1",
       "title": "The Brand Therapy Session",
-      "description": "We understand your brand, goals, and challenges.",
-      "image": "/assets/HowWeWork/one.jpg",
+      "description": "We sit down with your brand, dig into what’s working and what isn’t, and uncover the real story that needs to be told—clearly, confidently, and consistently.",
+      "image": "/assets/HowWeWork/",
       "alignment": "right"
     },
     {
       "id": "step-2",
       "title": "The Secret Recipe",
-      "description": "Strategy, creativity, and data combined.",
-      "image": "/assets/HowWeWork/two.jpg",
+      "description": "We blend creativity, strategy, and insight into a custom formula that gives your brand its unique edge—and makes people want more.",
+      "image": "/assets/HowWeWork/",
       "alignment": "left"
     },
     {
       "id": "step-3",
       "title": "Execution",
-      "description": "Campaigns and systems go live.",
-      "image": "/assets/HowWeWork/three.jpg",
+      "description": "No more drafts—just delivery. We turn ideas into scroll-stopping content and campaigns that actually move the needle.",
+      "image": "/assets/HowWeWork/",
       "alignment": "right"
     },
     {
       "id": "step-4",
       "title": "Optimization & Scaling",
-      "description": "We measure and scale what works.",
-      "image": "/assets/HowWeWork/four.webp",
+      "description": "We double down on what’s working, fix what’s not, and scale your brand into its next level—bigger reach, better engagement, stronger results.",
+      "image": "/assets/HowWeWork/",
       "alignment": "left"
     }
   ],

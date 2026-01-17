@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
-import { buttonHover, fadeIn, staggerContainer, staggerItem } from "../animations/motionVariants";
+import { buttonHover, staggerItem } from "../animations/motionVariants";
 import contactData from "../data/contact.json";
 import "./style/Form.css";
 

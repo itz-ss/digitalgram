@@ -1,0 +1,78 @@
+{
+  "company": "Digitalgram",
+  "tagline": "Visibility, credibility, and measurable digital growth.",
+  "about": {
+    "intro": "Digitalgram is a full-stack digital growth agency focused on helping brands build visibility, credibility, and measurable revenue in an increasingly competitive digital landscape.",
+    "overview": "We work with startups, local businesses, and growing brands to design and execute end-to-end digital marketing systems—from awareness and content to performance, automation, and long-term growth. At our core, we believe growth is driven by well-connected strategies executed with precision."
+  },
+  "whatWeDo": [
+    "Build attention through content, social media, influencers, and PR",
+    "Convert attention into leads using high-performance websites, funnels, and paid media",
+    "Scale results through SEO, automation, CRM, and data-driven optimization",
+    "Strengthen trust with reputation management, local visibility, and consistent brand presence"
+  ],
+  "coreExpertise": [
+    {
+      "title": "Social Media Marketing & Community Building",
+      "description": "Consistent, engaging brand presence across platforms with a focus on meaningful engagement over vanity metrics."
+    },
+    {
+      "title": "Content Creation & Creative Production",
+      "description": "Scroll-stopping visuals, videos, and brand assets designed to perform across organic and paid channels."
+    },
+    {
+      "title": "Websites, Funnels & Conversion Optimization",
+      "description": "Fast, responsive, conversion-focused digital experiences that turn visitors into customers."
+    },
+    {
+      "title": "Performance Marketing (Meta & Google Ads)",
+      "description": "ROI-driven advertising campaigns built on testing, optimization, and scalable funnel strategies."
+    },
+    {
+      "title": "Influencer Marketing & Public Relations",
+      "description": "Authentic influencer collaborations and media placements that build reach, credibility, and authority."
+    },
+    {
+      "title": "SEO & Local Growth",
+      "description": "Long-term organic visibility through technical SEO, content strategy, and local optimization."
+    },
+    {
+      "title": "Automation, CRM & Retention Systems",
+      "description": "Smart automation and CRM systems that ensure no lead is missed and every customer journey is nurtured."
+    },
+    {
+      "title": "Strategy, Consulting & Growth Planning",
+      "description": "Clear positioning, competitor analysis, and realistic growth roadmaps grounded in data."
+    }
+  ],
+  "approach": {
+    "steps": [
+      {
+        "title": "Clarity before action",
+        "description": "We define goals, positioning, and success metrics before launching any campaign."
+      },
+      {
+        "title": "Strategy meets creativity",
+        "description": "Creative execution is always backed by platform insights, audience behavior, and performance data."
+      },
+      {
+        "title": "Systems over one-off campaigns",
+        "description": "We build repeatable, scalable systems that continue delivering value over time."
+      },
+      {
+        "title": "Continuous optimization",
+        "description": "Every channel is monitored, tested, and refined to maximize ROI and efficiency."
+      }
+    ]
+  },
+  "whoWeWorkWith": [
+    "Startups building their digital foundation",
+    "Local businesses looking to dominate their market",
+    "Brands ready to scale performance and visibility",
+    "Teams that value transparency, data, and long-term thinking"
+  ],
+  "philosophy": {
+    "quote": "Visibility brings attention. Strategy turns attention into growth.",
+    "summary": "Every digital effort we execute serves a clear purpose, delivers measurable results, and moves the business forward."
+  }
+}

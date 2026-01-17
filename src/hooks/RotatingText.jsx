@@ -2,21 +2,23 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 
 const getVariants = (direction) => {
-  const offset = 20;
+  const offset = 15;
+  const scaleOffset = 0.05;
+  const transition = { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] };
 
   if (direction === "down") {
     return {
-      initial: { y: -offset, opacity: 0 },
-      animate: { y: 0, opacity: 1 },
-      exit: { y: offset, opacity: 0 }
+      initial: { y: -offset, scale: 1 - scaleOffset },
+      animate: { y: 0, scale: 1, transition },
+      exit: { y: offset, scale: 1 - scaleOffset, transition }
     };
   }
 
   // DEFAULT → UP
   return {
-    initial: { y: offset, opacity: 0 },
-    animate: { y: 0, opacity: 1 },
-    exit: { y: -offset, opacity: 0 }
+    initial: { y: offset, scale: 1 - scaleOffset },
+    animate: { y: 0, scale: 1, transition },
+    exit: { y: -offset, scale: 1 - scaleOffset, transition }
   };
 };
 

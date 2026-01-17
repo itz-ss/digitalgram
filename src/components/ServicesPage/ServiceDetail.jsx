@@ -123,14 +123,14 @@ function ServiceDetail() {
               whileInView="visible"
               viewport={defaultViewport}
             >
-              <button className="service-detail__primary" onClick={() => {
+              {/* <button className="service-detail__primary" onClick={() => {
                 const el = document.getElementById("service-detail-content");
                 el?.scrollIntoView({ behavior: "smooth", block: "start" });
               }}>
                 Explore Strategy
-              </button>
+              </button> */}
 
-              <button className="service-detail__secondary" onClick={handleClose}>
+              <button className="service-detail__primary" onClick={handleClose}>
                 Back to Services
               </button>
             </motion.div>
@@ -226,9 +226,6 @@ function ServiceDetail() {
             whileInView="visible"
             viewport={defaultViewport}
           >
-            <button className="service-detail__back-btn" onClick={handleClose}>
-              ← Back to Services
-            </button>
           </motion.div>
         </div>
       </div>

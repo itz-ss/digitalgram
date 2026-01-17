@@ -45,3 +45,13 @@ html {
   scrollbar-width: thin;
   scrollbar-color: var(--color-gray-400) var(--color-gray-50);
 }
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .content-area {
+    padding: 0;
+  }
+}

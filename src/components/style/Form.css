@@ -91,8 +91,9 @@
 
 .form-submit {
   padding: 1.125rem 2rem;
-  background: var(--color-primary);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
   color: var(--color-white);
+  box-shadow: var(--shadow-md), var(--glow-purple);
   border: none;
   border-radius: var(--radius-md);
   font-weight: var(--font-weight-semibold);
@@ -126,7 +127,8 @@
 }
 
 .form-submit:hover {
-  background: var(--color-primary-light);
+  background: linear-gradient(135deg, var(--color-primary-light), var(--color-accent-hover));
+  box-shadow: var(--shadow-lg), var(--glow-rose);
   box-shadow: var(--shadow-lg);
   transform: translateY(-2px);
 }

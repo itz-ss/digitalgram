@@ -2,46 +2,50 @@
 // SCROLL-DRIVEN ANIMATIONS
 // ============================================
 /**
- * Fade up animation - scroll-driven
+ * Slide up animation - scroll-driven (smooth without opacity)
  */
 export const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 1.5, ease: [0.25, 0.1, 0.25, 1] }
+  hidden: { y: 50, scale: 0.95 },
+  visible: {
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 1.2,
+      ease: [0.25, 0.1, 0.25, 1],
+      scale: { duration: 1.5, ease: [0.25, 0.1, 0.25, 1] }
+    }
   }
 };
 
 /**
- * Fade in animation - scroll-driven
+ * Slide in from left - scroll-driven
  */
-export const fadeIn = {
-  hidden: { opacity: 0 },
+export const slideInLeft = {
+  hidden: { x: -60, scale: 0.9 },
   visible: {
-    opacity: 1,
-    transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }
-  }
-};
-
-/**
- * Fade in from left - scroll-driven
- */
-export const fadeInLeft = {
-  hidden: { opacity: 0, x: -30 },
-  visible: {
-    opacity: 1,
     x: 0,
-    transition: { duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }
+    scale: 1,
+    transition: {
+      duration: 1.0,
+      ease: [0.25, 0.1, 0.25, 1],
+      scale: { duration: 1.3, ease: [0.25, 0.1, 0.25, 1] }
+    }
   }
 };
 
 /**
- * Fade in from right - scroll-driven
+ * Slide in from right - scroll-driven
  */
-export const fadeInRight = {
-  hidden: { opacity: 0, x: 30 },
+export const slideInRight = {
+  hidden: { x: 60, scale: 0.9 },
   visible: {
-    opacity: 1,
     x: 0,
-    transition: { duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }
+    scale: 1,
+    transition: {
+      duration: 1.0,
+      ease: [0.25, 0.1, 0.25, 1],
+      scale: { duration: 1.3, ease: [0.25, 0.1, 0.25, 1] }
+    }
   }
 };
 
@@ -49,11 +53,15 @@ export const fadeInRight = {
  * Scale in animation - scroll-driven
  */
 export const scaleIn = {
-  hidden: { opacity: 0, scale: 0.2 },
+  hidden: { scale: 0.8, y: 20 },
   visible: {
-    opacity: 1,
     scale: 1,
-    transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }
+    y: 0,
+    transition: {
+      duration: 1.1,
+      ease: [0.25, 0.1, 0.25, 1],
+      scale: { duration: 1.4, ease: [0.25, 0.1, 0.25, 1] }
+    }
   }
 };
 
@@ -61,12 +69,11 @@ export const scaleIn = {
  * Stagger container for children animations
  */
 export const staggerContainer = {
-  hidden: { opacity: 0 },
+  hidden: {},
   visible: {
-    opacity: 1,
     transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.2
+      staggerChildren: 0.15,
+      delayChildren: 0.1
     }
   }
 };
@@ -75,13 +82,21 @@ export const staggerContainer = {
  * Stagger item for use within stagger container
  */
 export const staggerItem = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { y: 30, scale: 0.95 },
   visible: {
-    opacity: 1,
     y: 0,
-    transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }
+    scale: 1,
+    transition: {
+      duration: 0.8,
+      ease: [0.25, 0.1, 0.25, 1],
+      scale: { duration: 1.1, ease: [0.25, 0.1, 0.25, 1] }
+    }
   }
 };
+
+// ============================================
+// TIME-DRIVEN ANIMATIONS (for specific use cases)
+// ============================================
 
 // ============================================
 // TIME-DRIVEN ANIMATIONS (for specific use cases)
@@ -91,16 +106,14 @@ export const staggerItem = {
  * Tab content transition - time-driven (needed for smooth tab switching)
  */
 export const tabContentVariants = {
-  hidden: { opacity: 0, y: 10, scale: 0.98 },
+  hidden: { y: 15, scale: 0.98 },
   visible: {
-    opacity: 1,
     y: 0,
     scale: 1,
     transition: { duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }
   },
   exit: {
-    opacity: 0,
-    y: -10,
+    y: -15,
     scale: 0.98,
     transition: { duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }
   }
@@ -126,11 +139,10 @@ export const buttonHover = {
  * Card hover animation - time-driven (for interactive cards)
  */
 export const cardHover = {
-  rest: { scale: 1, y: 0, boxShadow: "0 4px 6px rgba(0, 0, 0, 0.05)" },
+  rest: { scale: 1, y: 0 },
   hover: {
     scale: 1.02,
     y: -4,
-    boxShadow: "0 12px 24px rgba(0, 0, 0, 0.1)",
     transition: { duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }
   }
 };

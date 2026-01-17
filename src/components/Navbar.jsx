@@ -9,7 +9,7 @@ import {
 
 import { useDevice } from "../hooks/useDevice";
 import {
-  fadeIn,
+  
   linkHover,
   staggerContainer,
   staggerItem,
@@ -27,6 +27,7 @@ const MotionLink = motion(Link);
 const NAV_LINKS = [
   { href: "#home", label: "Home" },
   { href: "/services", label: "Services" },
+  { href: "/about", label: "About Us" },
   { href: "#how", label: "How we work" },
   { href: "#contact", label: "Contact" },
 ];
@@ -105,13 +106,13 @@ const Navbar = () => {
         aria-label="Main navigation"
         initial="hidden"
         animate="visible"
-        variants={reduceMotion ? undefined : fadeIn}
+        variants={reduceMotion ? undefined : staggerItem}
         transition={{ duration: 0.4 }}
       >
         <div className="nav-inner">
           {/* LOGO */}
           <a
-            href="#"
+            href="#home"
             className="nav-brand"
             onClick={(e) => {
               e.preventDefault();
@@ -119,7 +120,7 @@ const Navbar = () => {
             }}
           >
             <motion.span
-              whileHover={reduceMotion ? undefined : { scale: 1.05 }}
+              // whileHover={reduceMotion ? undefined : { scale: 1.05 }}
               transition={{ duration: 0.2 }}
             >
               Digitalgram

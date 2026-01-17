@@ -8,8 +8,8 @@
   padding: clamp(4rem, 8vw, 7rem) 1.25rem;
   background: linear-gradient(
     180deg,
-    rgba(255, 255, 255, 0.02),
-    rgba(255, 255, 255, 0)
+    var(--glass-white),
+    transparent
   );
 }
 
@@ -90,13 +90,13 @@
   align-items: center;
   padding: 1.1rem 1.25rem;
   border-radius: 14px;
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--glass-white-medium);
   backdrop-filter: blur(6px);
   transition: background 0.25s ease, transform 0.25s ease;
 }
 
 .contact-info-item:hover {
-  background: rgba(255, 255, 255, 0.07);
+  background: var(--glass-white-strong);
 }
 
 /* Label */
@@ -156,7 +156,7 @@
   gap: 0.75rem;
   padding: 0.9rem 1rem;
   border-radius: 14px;
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--glass-white-medium);
   backdrop-filter: blur(6px);
   text-decoration: none;
   color: var(--color-secondary);
@@ -166,7 +166,7 @@
 }
 
 .social-link:hover {
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--glass-white-strong);
 }
 
 /* Icon */
@@ -179,7 +179,7 @@
   place-items: center;
   font-size: 0.8rem;
   font-weight: 600;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--glass-purple-light);
 }
 
 /* Platform */
