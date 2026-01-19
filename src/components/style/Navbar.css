@@ -21,6 +21,11 @@
   transition: background var(--transition-base),
               box-shadow var(--transition-base),
               border-color var(--transition-base);
+  @media (max-width: 720px) {
+     background: var(--glass-white-strong);
+    backdrop-filter: none ;
+  -webkit-backdrop-filter: none;
+  }
 }
 
 .site-nav.scrolled {
@@ -127,6 +132,10 @@
   backdrop-filter: blur(10px);
   transform: translateY(-1px);
   box-shadow: var(--shadow-lg), var(--glow-purple);
+   @media (max-width: 720px) {
+    backdrop-filter: none ;
+  -webkit-backdrop-filter: none;
+  }
 }
 
 /* =========================
@@ -177,15 +186,21 @@
   top: 100%;
   left: 0;
   right: 0;
-
+   
   background: var(--glass-white-strong);
    backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
 
   border-top: 1px solid var(--glass-white-light);
   box-shadow: var(--shadow-lg);
-
+  overflow: scroll;
   z-index: calc(var(--z-sticky) + 1);
+   @media (max-width: 720px) {
+    backdrop-filter: none ;
+  -webkit-backdrop-filter: none;
+   padding-bottom: 50px;
+   overflow-y: scroll;
+  }
 }
 
 .mobile-menu-content {
@@ -193,7 +208,7 @@
   flex-direction: column;
   padding: var(--spacing-md);
   gap: var(--spacing-sm);
-  background-color: var(--glass-rose-light);
+  background-color: var(--glass-rose-strong);
 }
 
 .mobile-menu-link {

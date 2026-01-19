@@ -1,20 +1,14 @@
-import { motion, useReducedMotion } from "framer-motion";
+import ScrollParallax from "../parallax/ScrollParallax";
 import contactData from "../data/contact.json";
+import {motion, useReducedMotion} from "framer-motion"
 import "./style/Contact.css";
-import { fadeUp } from "../animations/motionVariants";
 
 const Contact = () => {
-  const reduceMotion = useReducedMotion();
-
+const reduceMotion = useReducedMotion();
   return (
     <section id="contact" className="contact-section">
-      <motion.div
-        className="contact-container"
-        variants={reduceMotion ? undefined : fadeUp}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-      >
+      <ScrollParallax speed={30}>
+        <div className="contact-container">
         {/* Header */}
         <header className="contact-header">
           <h2 className="contact-title">{contactData.title}</h2>
@@ -96,7 +90,8 @@ const Contact = () => {
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
+    </ScrollParallax>
     </section>
   );
 };

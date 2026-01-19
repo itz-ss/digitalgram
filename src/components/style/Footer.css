@@ -17,6 +17,10 @@
   position: relative;
   overflow: hidden;
   z-index: 1;
+   @media (max-width: 720px) {
+    backdrop-filter: none ;
+  -webkit-backdrop-filter: none;
+  }
 }
 
 .site-footer::before {

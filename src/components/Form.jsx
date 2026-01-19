@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
-import { buttonHover, staggerItem } from "../animations/motionVariants";
+import TiltParallaxCard from "../parallax/TiltParallaxCard";
 import contactData from "../data/contact.json";
 import "./style/Form.css";
 
 const WHATSAPP_NUMBER = "916388060502"; // Format: country code + number (no + or spaces)
-// Note: User provided 6388060502, formatted as 916388060502 (India country code 91)
 
 /**
  * Formats form data into a readable WhatsApp message
@@ -18,13 +16,8 @@ const formatWhatsAppMessage = (formData) => {
     `📧 *Email:* ${formData.email}`,
   ];
 
-  if (formData.phone) {
-    lines.push(`📱 *Phone:* ${formData.phone}`);
-  }
-
-  if (formData.service) {
-    lines.push(`🎯 *Service Interest:* ${formData.service}`);
-  }
+  if (formData.phone) lines.push(`📱 *Phone:* ${formData.phone}`);
+  if (formData.service) lines.push(`🎯 *Service Interest:* ${formData.service}`);
 
   lines.push("");
   lines.push(`💬 *Message:*`);
@@ -44,22 +37,24 @@ const sendToWhatsApp = (formData) => {
 };
 
 const Form = ({ onClose, className = "" }) => {
-  const reduce = useReducedMotion();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     service: "",
-    message: ""
+    message: "",
   });
+
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null);
+  const [submitStatus, setSubmitStatus] = useState(null); // "success" | "error" | null
   const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+
     setFormData((prev) => ({ ...prev, [name]: value }));
-    // Clear error when user starts typing
+
+    // Clear error while typing
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: "" }));
     }
@@ -68,9 +63,7 @@ const Form = ({ onClose, className = "" }) => {
   const validateForm = () => {
     const newErrors = {};
 
-    if (!formData.name.trim()) {
-      newErrors.name = "Name is required";
-    }
+    if (!formData.name.trim()) newErrors.name = "Name is required";
 
     if (!formData.email.trim()) {
       newErrors.email = "Email is required";
@@ -78,49 +71,39 @@ const Form = ({ onClose, className = "" }) => {
       newErrors.email = "Please enter a valid email address";
     }
 
-    if (!formData.message.trim()) {
-      newErrors.message = "Message is required";
-    }
+    if (!formData.message.trim()) newErrors.message = "Message is required";
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    
-    if (!validateForm()) {
-      return;
-    }
+
+    if (!validateForm()) return;
 
     setIsSubmitting(true);
     setSubmitStatus(null);
 
     try {
-      // Send to WhatsApp
       sendToWhatsApp(formData);
-      
-      // Show success message
       setSubmitStatus("success");
-      
-      // Reset form after a short delay
+
       setTimeout(() => {
         setFormData({
           name: "",
           email: "",
           phone: "",
           service: "",
-          message: ""
+          message: "",
         });
+
         setIsSubmitting(false);
-        
-        // Close modal if onClose is provided
+
         if (onClose) {
-          setTimeout(() => {
-            onClose();
-          }, 2000);
+          setTimeout(() => onClose(), 1200);
         }
-      }, 1000);
+      }, 600);
     } catch (error) {
       setSubmitStatus("error");
       setIsSubmitting(false);
@@ -130,19 +113,13 @@ const Form = ({ onClose, className = "" }) => {
   return (
     <div className={`form-container ${className}`}>
       <form className="contact-form" onSubmit={handleSubmit} noValidate>
-        {contactData.form.fields.map((field, index) => (
-          <motion.div
-            key={field.name}
-            className="form-group"
-            variants={reduce ? undefined : staggerItem}
-            initial="hidden"
-            animate="visible"
-            transition={{ delay: index * 0.05 }}
-          >
+        {contactData.form.fields.map((field) => (
+          <div key={field.name} className="form-group">
             <label htmlFor={field.name} className="form-label">
               {field.label}
               {field.required && <span className="required">*</span>}
             </label>
+
             {field.type === "textarea" ? (
               <textarea
                 id={field.name}
@@ -152,9 +129,13 @@ const Form = ({ onClose, className = "" }) => {
                 placeholder={field.placeholder}
                 required={field.required}
                 rows={6}
-                className={`form-input form-textarea ${errors[field.name] ? "error" : ""}`}
+                className={`form-input form-textarea ${
+                  errors[field.name] ? "error" : ""
+                }`}
                 aria-invalid={errors[field.name] ? "true" : "false"}
-                aria-describedby={errors[field.name] ? `${field.name}-error` : undefined}
+                aria-describedby={
+                  errors[field.name] ? `${field.name}-error` : undefined
+                }
               />
             ) : field.type === "select" ? (
               <select
@@ -163,9 +144,13 @@ const Form = ({ onClose, className = "" }) => {
                 value={formData[field.name]}
                 onChange={handleChange}
                 required={field.required}
-                className={`form-input form-select ${errors[field.name] ? "error" : ""}`}
+                className={`form-input form-select ${
+                  errors[field.name] ? "error" : ""
+                }`}
                 aria-invalid={errors[field.name] ? "true" : "false"}
-                aria-describedby={errors[field.name] ? `${field.name}-error` : undefined}
+                aria-describedby={
+                  errors[field.name] ? `${field.name}-error` : undefined
+                }
               >
                 <option value="">Select a service</option>
                 {field.options.map((option) => (
@@ -185,65 +170,49 @@ const Form = ({ onClose, className = "" }) => {
                 required={field.required}
                 className={`form-input ${errors[field.name] ? "error" : ""}`}
                 aria-invalid={errors[field.name] ? "true" : "false"}
-                aria-describedby={errors[field.name] ? `${field.name}-error` : undefined}
+                aria-describedby={
+                  errors[field.name] ? `${field.name}-error` : undefined
+                }
               />
             )}
+
+            {/* Error text (no framer-motion needed) */}
             {errors[field.name] && (
-              <motion.span
-                id={`${field.name}-error`}
-                className="form-error"
-                initial={{ opacity: 0, y: -5 }}
-                animate={{ opacity: 1, y: 0 }}
-              >
+              <span id={`${field.name}-error`} className="form-error">
                 {errors[field.name]}
-              </motion.span>
+              </span>
             )}
-          </motion.div>
+          </div>
         ))}
 
-        <AnimatePresence>
-          {submitStatus === "success" && (
-            <motion.div
-              className="form-message form-success"
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-            >
-              ✅ {contactData.form.successMessage}
-            </motion.div>
-          )}
+        {/* Status message (no AnimatePresence needed) */}
+        {submitStatus === "success" && (
+          <div className="form-message form-success">
+            ✅ {contactData.form.successMessage}
+          </div>
+        )}
 
-          {submitStatus === "error" && (
-            <motion.div
-              className="form-message form-error"
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-            >
-              ❌ {contactData.form.errorMessage}
-            </motion.div>
-          )}
-        </AnimatePresence>
+        {submitStatus === "error" && (
+          <div className="form-message form-error">
+            ❌ {contactData.form.errorMessage}
+          </div>
+        )}
 
-        <motion.button
-          type="submit"
-          className="form-submit"
-          disabled={isSubmitting}
-          whileHover={reduce ? undefined : buttonHover.hover}
-          whileTap={reduce ? undefined : buttonHover.tap}
-        >
-          {isSubmitting ? (
-            <>
-              <span className="spinner"></span>
-              {contactData.form.submittingText}
-            </>
-          ) : (
-            <>
-              <span className="whatsapp-icon">💬</span>
-              {contactData.form.submitText}
-            </>
-          )}
-        </motion.button>
+        <TiltParallaxCard>
+          <button type="submit" className="form-submit" disabled={isSubmitting}>
+            {isSubmitting ? (
+              <>
+                <span className="spinner"></span>
+                {contactData.form.submittingText}
+              </>
+            ) : (
+              <>
+                <span className="whatsapp-icon">💬</span>
+                {contactData.form.submitText}
+              </>
+            )}
+          </button>
+        </TiltParallaxCard>
       </form>
     </div>
   );

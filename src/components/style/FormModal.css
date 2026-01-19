@@ -42,6 +42,10 @@
   overflow-y: auto;
   pointer-events: auto;
   position: relative;
+   @media (max-width: 720px) {
+    backdrop-filter: none ;
+  -webkit-backdrop-filter: none;
+  }
 }
 
 .modal-header {

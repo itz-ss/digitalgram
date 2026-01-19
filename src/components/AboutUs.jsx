@@ -1,19 +1,13 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { motion, useReducedMotion } from "framer-motion";
-import {
-  fadeUp,
-  staggerContainer,
-  staggerItem,
-  defaultViewport
-} from "../animations/motionVariants";
+
+import ScrollParallax from "../parallax/ScrollParallax";
 import aboutUs from "../data/aboutUs.json";
 import TiltedCard from "./Background/TiltedCard";
 import "./style/AboutUs.css";
 
 function AboutUs() {
   const navigate = useNavigate();
-  const reduce = useReducedMotion();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -34,19 +28,10 @@ function AboutUs() {
     );
   }
 
-  const paragraphs =
-    aboutUs.about && aboutUs.about.overview
-      ? aboutUs.about.overview.split("\n\n").filter(Boolean)
-      : [];
+  const paragraphs = aboutUs.about?.overview?.split("\n\n").filter(Boolean) || [];
 
   return (
-    <motion.section
-      className="about-us"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.25 }}
-    >
+    <section className="about-us">
       {/* Top Floating Back / Close */}
       <button
         className="about-us__close-btn"
@@ -62,254 +47,160 @@ function AboutUs() {
         <div className="about-us__hero">
           {/* LEFT */}
           <div className="about-us__hero-left">
-            <motion.p
-              className="about-us__eyebrow"
-              variants={reduce ? undefined : fadeUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={defaultViewport}
-            >
-              About Digitalgram
-            </motion.p>
+            <ScrollParallax speed={20}>
+              <p className="about-us__eyebrow">About Digitalgram</p>
+            </ScrollParallax>
 
-            <motion.h1
-              className="about-us__title"
-              variants={reduce ? undefined : fadeUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={defaultViewport}
-            >
-              {aboutUs.company || "Digitalgram"}
-            </motion.h1>
+            <ScrollParallax speed={25}>
+              <h1 className="about-us__title">
+                {aboutUs.company || "Digitalgram"}
+              </h1>
+            </ScrollParallax>
 
-            <motion.p
-              className="about-us__desc"
-              variants={reduce ? undefined : fadeUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={defaultViewport}
-            >
-              {aboutUs.tagline || "Digital growth agency"}
-            </motion.p>
+            <ScrollParallax speed={18}>
+              <p className="about-us__desc">
+                {aboutUs.tagline || "Digital growth agency"}
+              </p>
+            </ScrollParallax>
 
-            <motion.div
-              className="about-us__hero-actions"
-              variants={reduce ? undefined : fadeUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={defaultViewport}
-            >
-              <button className="about-us__primary" onClick={handleClose}>
-                Back to Home
-              </button>
-            </motion.div>
+            <ScrollParallax speed={30}>
+              <div className="about-us__hero-actions">
+                <button className="about-us__primary" onClick={handleClose}>
+                  Back to Home
+                </button>
+              </div>
+            </ScrollParallax>
           </div>
 
           {/* RIGHT */}
-          <motion.div
-            className="about-us__hero-right"
-            variants={reduce ? undefined : fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={defaultViewport}
-          >
-            {/* <div className="about-us__image-card"> */}
-              {/* <div className="about-us__image-fallback"> */}
+          <ScrollParallax speed={35}>
+            <div className="about-us__hero-right">
               <div className="about-us-img">
-                 <TiltedCard
-                imageSrc="/assets/about.png"
-                altText="DigitalGram"
-                captionText="DigitalGram"
-                containerHeight="300px"
-                containerWidth="400px"
-                imageHeight="300px"
-                imageWidth="500px"
-                rotateAmplitude={12}
-                // scaleOnHover={1.2}
-                showMobileWarning={false}
-                showTooltip={true}
-                displayOverlayContent={true}
-                overlayContent={
-                    <p className="">
-                    DigitalGram
-                    </p>
-                }
+                <TiltedCard
+                  imageSrc="/assets/about.png"
+                  altText="DigitalGram"
+                  captionText="DigitalGram"
+                  containerHeight="300px"
+                  containerWidth="400px"
+                  imageHeight="300px"
+                  imageWidth="500px"
+                  rotateAmplitude={12}
+                  showMobileWarning={false}
+                  showTooltip={true}
+                  displayOverlayContent={true}
+                  overlayContent={<p>DigitalGram</p>}
                 />
-                </div>
-              {/* </div> */}
-            {/* </div> */}
-          </motion.div>
+              </div>
+            </div>
+          </ScrollParallax>
         </div>
 
         {/* CONTENT */}
         <div className="about-us__content" id="about-us-content">
           {/* Detailed Description */}
           {paragraphs.length > 0 && (
-            <motion.div
-              className="about-us__copy"
-              variants={reduce ? undefined : staggerContainer}
-              initial="hidden"
-              whileInView="visible"
-              viewport={defaultViewport}
-            >
+            <div className="about-us__copy">
               {paragraphs.map((p, index) => (
-                <motion.p
-                  key={`p-${index}`}
-                  variants={reduce ? undefined : staggerItem}
-                  className="about-us__paragraph"
-                >
+                <p key={`p-${index}`} className="about-us__paragraph">
                   {p}
-                </motion.p>
+                </p>
               ))}
-            </motion.div>
+            </div>
           )}
 
           {/* What We Do */}
-          <motion.div
-            className="about-us__section"
-            variants={reduce ? undefined : staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={defaultViewport}
-          >
-            <motion.div variants={reduce ? undefined : fadeUp}>
+          <div className="about-us__section">
+            <div>
               <h2 className="about-us__section-title">What We Do</h2>
               <p className="about-us__section-subtitle">
                 Strategic digital solutions that drive measurable growth and lasting impact.
               </p>
-            </motion.div>
+            </div>
 
-            <motion.ul className="about-us__offer-grid">
-              {aboutUs.whatWeDo && aboutUs.whatWeDo.map((item, index) => (
-                <motion.li
-                  key={`what-we-do-${index}`}
-                  variants={reduce ? undefined : staggerItem}
-                  className="about-us__offer-item"
-                >
+            <ul className="about-us__offer-grid">
+              {aboutUs.whatWeDo?.map((item, index) => (
+                <li key={`what-we-do-${index}`} className="about-us__offer-item">
                   <span className="about-us__check">✓</span>
                   <span className="about-us__offer-text">{item}</span>
-                </motion.li>
+                </li>
               ))}
-            </motion.ul>
-          </motion.div>
+            </ul>
+          </div>
 
           {/* Core Expertise */}
-          <motion.div
-            className="about-us__section"
-            variants={reduce ? undefined : staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={defaultViewport}
-          >
-            <motion.div variants={reduce ? undefined : fadeUp}>
+          <div className="about-us__section">
+            <div>
               <h2 className="about-us__section-title">Core Expertise</h2>
               <p className="about-us__section-subtitle">
                 Specialized skills and proven methodologies that set us apart.
               </p>
-            </motion.div>
+            </div>
 
-            <motion.ul className="about-us__offer-grid">
-              {aboutUs.coreExpertise && aboutUs.coreExpertise.map((item, index) => (
-                <motion.li
-                  key={`expertise-${index}`}
-                  variants={reduce ? undefined : staggerItem}
-                  className="about-us__offer-item"
-                >
+            <ul className="about-us__offer-grid">
+              {aboutUs.coreExpertise?.map((item, index) => (
+                <li key={`expertise-${index}`} className="about-us__offer-item">
                   <span className="about-us__check">✓</span>
                   <span className="about-us__offer-text">{item.title}</span>
                   <p className="about-us__offer-desc">{item.description}</p>
-                </motion.li>
+                </li>
               ))}
-            </motion.ul>
-          </motion.div>
+            </ul>
+          </div>
 
           {/* Our Approach */}
-          <motion.div
-            className="about-us__section"
-            variants={reduce ? undefined : staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={defaultViewport}
-          >
-            <motion.div variants={reduce ? undefined : fadeUp}>
+          <div className="about-us__section">
+            <div>
               <h2 className="about-us__section-title">Our Approach</h2>
               <p className="about-us__section-subtitle">
                 A systematic methodology that ensures consistent results and sustainable growth.
               </p>
-            </motion.div>
+            </div>
 
-            <motion.ul className="about-us__offer-grid">
-              {aboutUs.approach && aboutUs.approach.steps && aboutUs.approach.steps.map((item, index) => (
-                <motion.li
-                  key={`approach-${index}`}
-                  variants={reduce ? undefined : staggerItem}
-                  className="about-us__offer-item"
-                >
+            <ul className="about-us__offer-grid">
+              {aboutUs.approach?.steps?.map((item, index) => (
+                <li key={`approach-${index}`} className="about-us__offer-item">
                   <span className="about-us__check">✓</span>
                   <span className="about-us__offer-text">{item.title}</span>
                   <p className="about-us__offer-desc">{item.description}</p>
-                </motion.li>
+                </li>
               ))}
-            </motion.ul>
-          </motion.div>
+            </ul>
+          </div>
 
           {/* Who We Work With */}
-          <motion.div
-            className="about-us__section"
-            variants={reduce ? undefined : staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={defaultViewport}
-          >
-            <motion.div variants={reduce ? undefined : fadeUp}>
+          <div className="about-us__section">
+            <div>
               <h2 className="about-us__section-title">Who We Work With</h2>
               <p className="about-us__section-subtitle">
                 Partnering with ambitious businesses ready to dominate their digital landscape.
               </p>
-            </motion.div>
+            </div>
 
-            <motion.ul className="about-us__offer-grid">
-              {aboutUs.whoWeWorkWith && aboutUs.whoWeWorkWith.map((item, index) => (
-                <motion.li
-                  key={`who-we-work-${index}`}
-                  variants={reduce ? undefined : staggerItem}
-                  className="about-us__offer-item"
-                >
+            <ul className="about-us__offer-grid">
+              {aboutUs.whoWeWorkWith?.map((item, index) => (
+                <li key={`who-we-work-${index}`} className="about-us__offer-item">
                   <span className="about-us__check">✓</span>
                   <span className="about-us__offer-text">{item}</span>
-                </motion.li>
+                </li>
               ))}
-            </motion.ul>
-          </motion.div>
+            </ul>
+          </div>
 
           {/* Philosophy */}
-          <motion.div
-            className="about-us__philosophy"
-            variants={reduce ? undefined : fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={defaultViewport}
-          >
+          <div className="about-us__philosophy">
             <blockquote className="about-us__quote">
-              "{aboutUs.philosophy && aboutUs.philosophy.quote}"
+              "{aboutUs.philosophy?.quote || ""}"
             </blockquote>
             <p className="about-us__quote-summary">
-              {aboutUs.philosophy && aboutUs.philosophy.summary}
+              {aboutUs.philosophy?.summary || ""}
             </p>
-          </motion.div>
+          </div>
 
-          {/* Bottom back */}
-          <motion.div
-            className="about-us__bottom"
-            variants={reduce ? undefined : fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={defaultViewport}
-          >
-          </motion.div>
+          {/* Bottom spacer */}
+          <div className="about-us__bottom" />
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 }
 
