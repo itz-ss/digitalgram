@@ -1,31 +1,33 @@
 {
   "title": "How We Work",
+  "subheading": "From Strategy to Results — A Proven Process That Delivers",
+  "description": "At DigitalGram, our approach is designed to turn ideas into measurable business outcomes. Every step is focused on ensuring your brand grows, engages your audience, and achieves tangible results.",
   "steps": [
     {
       "id": "step-1",
-      "title": "The Brand Therapy Session",
-      "description": "We sit down with your brand, dig into what’s working and what isn’t, and uncover the real story that needs to be told—clearly, confidently, and consistently.",
+      "title": "Discover & Understand",
+      "description": "We start by understanding your brand, goals, target audience, and competitors. This ensures every strategy is aligned with your business objectives.",
       "image": "/assets/HowWeWork/",
       "alignment": "right"
     },
     {
       "id": "step-2",
-      "title": "The Secret Recipe",
-      "description": "We blend creativity, strategy, and insight into a custom formula that gives your brand its unique edge—and makes people want more.",
+      "title": "Strategize & Plan",
+      "description": "We develop a data-driven content and marketing strategy tailored to your brand. Every plan focuses on maximizing engagement, leads, and conversions.",
       "image": "/assets/HowWeWork/",
       "alignment": "left"
     },
     {
       "id": "step-3",
-      "title": "Execution",
-      "description": "No more drafts—just delivery. We turn ideas into scroll-stopping content and campaigns that actually move the needle.",
+      "title": "Create & Execute",
+      "description": "Our team produces high-quality content and implements marketing campaigns across multiple channels. Every piece is crafted to drive measurable results.",
       "image": "/assets/HowWeWork/",
       "alignment": "right"
     },
     {
       "id": "step-4",
-      "title": "Optimization & Scaling",
-      "description": "We double down on what’s working, fix what’s not, and scale your brand into its next level—bigger reach, better engagement, stronger results.",
+      "title": "Measure & Optimize",
+      "description": "We track performance metrics, analyze results, and continuously optimize campaigns to ensure your marketing delivers the desired outcomes.",
       "image": "/assets/HowWeWork/",
       "alignment": "left"
     }

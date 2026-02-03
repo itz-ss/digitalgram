@@ -14,8 +14,8 @@ export default function TiltParallaxCard({ children, className = "" }) {
   const x = useSpring(mx, { stiffness: 220, damping: 18 });
   const y = useSpring(my, { stiffness: 220, damping: 18 });
 
-  const rotateY = useTransform(x, [-0.5, 0.5], [-18, 18]);
-  const rotateX = useTransform(y, [-0.5, 0.5], [18, -18]);
+  const rotateY = useTransform(x, [-0.5, 0.5], [-4, 4]);
+  const rotateX = useTransform(y, [-0.5, 0.5], [4, -4]);
 
   const onMove = (e) => {
     const rect = ref.current.getBoundingClientRect();

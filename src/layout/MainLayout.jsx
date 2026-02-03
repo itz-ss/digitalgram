@@ -10,7 +10,7 @@ const MainLayout = () => {
       <Navbar />
 
       <main className="content-area">
-        <AppBackground/>
+        {/* <AppBackground/> */}
         <Outlet />
       </main>
 

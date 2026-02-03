@@ -5,6 +5,28 @@
   overflow: hidden;
   border-radius: 20px;
   margin: auto;
+
+  /* Premium border */
+  border: 1px solid #FFD700;
+
+  box-shadow:
+    0 50px 140px rgba(0, 0, 0, 0.15),
+    0 18px 60px rgba(255, 215, 0, 0.08);
+
+  transform: translateZ(0);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+/* Subtle hover lift for premium */
+@media (hover: hover) and (pointer: fine) {
+  .video-hero:hover {
+    transform: translateY(-6px);
+    border-color: #FFE135;
+
+    box-shadow:
+      0 70px 180px rgba(0, 0, 0, 0.2),
+      0 28px 85px rgba(255, 215, 0, 0.12);
+  }
 }
 
 .video-bg {
@@ -13,17 +35,77 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+
+  /* makes video feel richer */
+  filter: contrast(1.05) saturate(1.05);
 }
 
+/* Overlay = palette cinematic gradient */
 .video-overlay {
   position: absolute;
   inset: 0;
 
+  /* background: */
+    /* top soft shade for readability */
+    /* linear-gradient(
+      180deg,
+      rgba(0, 27, 61, 0.70) 0%,
+      rgba(0, 27, 61, 0.20) 45%,
+      rgba(0, 27, 61, 0.78) 100%
+    ), */
+    /* side vignette */
+    /* radial-gradient(
+      circle at 50% 40%,
+      rgba(255, 30, 77, 0.14),
+      rgba(0, 27, 61, 0.65) 70%
+    ); */
+
+  pointer-events: none;
+}
+
+/* Inner shine layer */
+.video-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.15),
+    transparent 40%,
+    transparent 70%,
+    rgba(255, 215, 0, 0.06)
+  );
+
+  opacity: 0.5;
+}
+
+/* Yellow ground glow */
+.video-hero::after {
+  content: "";
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: -28px;
+  height: 56px;
+  z-index: 1;
+  pointer-events: none;
+
+  background: radial-gradient(
+    closest-side,
+    rgba(255, 215, 0, 0.2),
+    transparent 72%
+  );
+
+  filter: blur(16px);
+  opacity: 0.6;
 }
 
 .video-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   height: 100%;
   display: flex;
   align-items: center;

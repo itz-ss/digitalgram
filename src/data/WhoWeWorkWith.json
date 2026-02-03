@@ -1,0 +1,32 @@
+{
+  "sectionTitle": "Who We Work With",
+  "sectionSubtitle": "We Partner with Brands Across Industries",
+  "description": "Our full-service content creation and marketing solutions are trusted by businesses across diverse sectors. We understand each industry’s unique challenges and tailor our strategies to deliver measurable growth.",
+
+  "industries": [
+    {
+      "id": "healthcare",
+      "icon": "🏥",
+      "title": "Healthcare",
+      "description": "From hospitals to wellness brands, we create content that educates, engages, and builds trust with patients and stakeholders."
+    },
+    {
+      "id": "real-estate",
+      "icon": "🏢",
+      "title": "Real Estate",
+      "description": "We help real estate businesses showcase properties, attract leads, and engage potential buyers with visually compelling and strategic content."
+    },
+    {
+      "id": "education",
+      "icon": "🎓",
+      "title": "Education",
+      "description": "Schools, colleges, and e-learning platforms rely on our marketing to boost student engagement, strengthen brand presence, and drive enrollment."
+    },
+    {
+      "id": "interior-design",
+      "icon": "🛋️",
+      "title": "Interior Design",
+      "description": "For designers and firms, we craft visually stunning content that highlights creativity, inspires clients, and drives business growth."
+    }
+  ]
+}
